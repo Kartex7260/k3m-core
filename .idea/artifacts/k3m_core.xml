@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="k3m-core">
+    <output-path>$PROJECT_DIR$/out/artifacts/k3m_core</output-path>
+    <root id="archive" name="k3m-core.jar">
+      <element id="module-output" name="k3m.k3m-core.main" />
+    </root>
+  </artifact>
+</component>
