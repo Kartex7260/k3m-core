@@ -13,7 +13,7 @@ interface MappingParser {
 
 	val dependencies: Iterable<DependencyInfo>
 
-	val parameters: Iterable<ParametersInfo>
+	val parameters: Iterable<ParameterInfo>
 }
 
 class DefaultMappingParser(
@@ -29,7 +29,7 @@ class DefaultMappingParser(
 
 	override val dependencies: Iterable<DependencyInfo>
 
-	override val parameters: Iterable<ParametersInfo>
+	override val parameters: Iterable<ParameterInfo>
 
 	init {
 		val mImports = mutableListOf<ImportInfo>()
@@ -41,7 +41,7 @@ class DefaultMappingParser(
 		mappingInfo.parseDependencies(mDependencies)
 		dependencies = mDependencies
 
-		val mParameters = mutableListOf<ParametersInfo>()
+		val mParameters = mutableListOf<ParameterInfo>()
 		mappingInfo.parseParameters(mParameters)
 		parameters = mParameters
 	}
@@ -105,7 +105,7 @@ class DefaultMappingParser(
 		}
 	}
 
-	private fun MappingInfo.parseParameters(parameters: MutableList<ParametersInfo>) {
+	private fun MappingInfo.parseParameters(parameters: MutableList<ParameterInfo>) {
 		for (parameter in this.parameters) {
 			if (parameter.converter != null) {
 				parameter.addWithConverter(parameters)
@@ -113,7 +113,7 @@ class DefaultMappingParser(
 
 			if (parameter.sourceType == parameter.destinationType) {
 				parameters.add(
-					ParametersInfo(
+					ParameterInfo(
 						destination = parameter.destinationName,
 						source = parameter.sourceName,
 						converter = null
@@ -131,11 +131,11 @@ class DefaultMappingParser(
 		}
 	}
 
-	private fun ParameterLinkInfo.addWithConverter(parameters: MutableList<ParametersInfo>) {
+	private fun ParameterLinkInfo.addWithConverter(parameters: MutableList<ParameterInfo>) {
 		when (converter) {
 			is ConverterInfo.GlobalFunc -> {
 				parameters.add(
-					ParametersInfo(
+					ParameterInfo(
 						destination = destinationName,
 						source = sourceName,
 						converter = converter.funcName
@@ -144,7 +144,7 @@ class DefaultMappingParser(
 			}
 			is ConverterInfo.ClassFunc -> {
 				parameters.add(
-					ParametersInfo(
+					ParameterInfo(
 						destination = destinationName,
 						source = sourceName,
 						converter = "${converter.paramName}.${converter.function}"

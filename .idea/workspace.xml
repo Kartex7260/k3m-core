@@ -9,11 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="REFACTOR: доработка ConverterInfo">
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/K3MSerializer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/MappingParser.kt" afterDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FEAT: парсер MappingInfo для сериализатора">
+      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/MappingParserFactory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/TypeInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/TypeInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/K3MSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/K3MSerializer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/MappingParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/MappingParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParametersInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParameterInfo.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +30,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Interface" />
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
-        <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -67,6 +69,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kiril\IdeaProjects\k3m\k3m-core\src\main\kotlin\kanti\k3m\serializer\parser" />
       <recent name="C:\Users\kiril\IdeaProjects\k3m\tester\src\main\kotlin\kanti\test" />
     </key>
   </component>
@@ -156,7 +159,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710258891315</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="FEAT: парсер MappingInfo для сериализатора">
+      <option name="closed" value="true" />
+      <created>1710261601918</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710261601918</updated>
+    </task>
+    <task id="LOCAL-00009" summary="FEAT: парсер MappingInfo для сериализатора">
+      <option name="closed" value="true" />
+      <created>1710261673318</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710261673318</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -166,6 +185,7 @@
     <MESSAGE value="REFACTOR: доработка Data классов" />
     <MESSAGE value="Подготовка тест модулей к будущему тестированию" />
     <MESSAGE value="REFACTOR: доработка ConverterInfo" />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: доработка ConverterInfo" />
+    <MESSAGE value="FEAT: парсер MappingInfo для сериализатора" />
+    <option name="LAST_COMMIT_MESSAGE" value="FEAT: парсер MappingInfo для сериализатора" />
   </component>
 </project>
