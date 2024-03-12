@@ -109,6 +109,7 @@ class DefaultMappingParser(
 		for (parameter in this.parameters) {
 			if (parameter.converter != null) {
 				parameter.addWithConverter(parameters)
+				continue
 			}
 
 			if (parameter.sourceType == parameter.destinationType) {

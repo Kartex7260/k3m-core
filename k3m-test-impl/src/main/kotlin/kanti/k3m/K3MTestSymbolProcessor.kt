@@ -3,6 +3,7 @@ package kanti.k3m
 import com.google.devtools.ksp.processing.CodeGenerator
 import com.google.devtools.ksp.processing.KSPLogger
 import com.google.devtools.ksp.processing.Resolver
+import kanti.k3m.data.ConverterInfo
 import kanti.k3m.data.MappingInfo
 import kanti.k3m.data.ParameterLinkInfo
 import kanti.k3m.data.TypeInfo
@@ -55,6 +56,48 @@ class K3MTestSymbolProcessor(
 							type = "String"
 						),
 						converter = null
+					)
+				)
+			),
+			MappingInfo(
+				packageName = "kanti.home",
+				source = TypeInfo(
+					packageName = "kanti.test",
+					type = "KantiHome"
+				),
+				destination = TypeInfo(
+					packageName = "kartex.test",
+					type = "KartexHome"
+				),
+				parameters = listOf(
+					ParameterLinkInfo(
+						sourceName = "id",
+						destinationName = "id",
+						sourceType = TypeInfo(
+							packageName = "kotlin",
+							type = "Int"
+						),
+						destinationType = TypeInfo(
+							packageName = "kotlin",
+							type = "Int"
+						),
+						converter = null
+					),
+					ParameterLinkInfo(
+						sourceName = "type",
+						destinationName = "type2",
+						sourceType = TypeInfo(
+							packageName = "kanti.test",
+							type = "HomeType"
+						),
+						destinationType = TypeInfo(
+							packageName = "kotlin",
+							type = "String"
+						),
+						converter = ConverterInfo.GlobalFunc(
+							funcName = "convert",
+							packageName = "kanti.test.conv"
+						)
 					)
 				)
 			)
