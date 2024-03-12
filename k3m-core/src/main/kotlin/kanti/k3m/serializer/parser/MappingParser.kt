@@ -51,10 +51,10 @@ class DefaultMappingParser(
 		destination.addIfNotKotlin(mainPkg, imports)
 
 		for (parameter in parameters) {
-			parameter.apply {
-				sourceType.addIfNotKotlin(mainPkg, imports)
-				destinationType.addIfNotKotlin(mainPkg, imports)
-			}
+//			parameter.apply {
+//				sourceType.addIfNotKotlin(mainPkg, imports)
+//				destinationType.addIfNotKotlin(mainPkg, imports)
+//			}
 			parameter.converter.addIfNotKotlin(mainPkg, imports)
 		}
 	}
