@@ -10,6 +10,15 @@ sealed class ConverterInfo {
 	class ClassFunc(
 		val function: String,
 		val type: TypeInfo,
-		val dependencyParameterName: String?
-	) : ConverterInfo()
+		private val dependencyParameterName: String?
+	) : ConverterInfo() {
+
+		val paramName: String get() = dependencyParameterName
+			?: type.type.replaceFirstChar {
+				if (it.isUpperCase())
+					it.lowercase()[0]
+				else
+					it
+			}
+	}
 }

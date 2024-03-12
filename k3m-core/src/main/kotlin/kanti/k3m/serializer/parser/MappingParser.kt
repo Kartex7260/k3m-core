@@ -1,0 +1,158 @@
+package kanti.k3m.serializer.parser
+
+import kanti.k3m.data.*
+
+interface MappingParser {
+
+	val packageName: String
+
+	val imports: Iterable<ImportInfo>
+
+	val sourceType: String
+	val destinationType: String
+
+	val dependencies: Iterable<DependencyInfo>
+
+	val parameters: Iterable<ParametersInfo>
+}
+
+class DefaultMappingParser(
+	mappingInfo: MappingInfo
+) : MappingParser {
+
+	override val packageName: String = mappingInfo.packageName
+
+	override val imports: Iterable<ImportInfo>
+
+	override val sourceType: String = mappingInfo.source.type
+	override val destinationType: String = mappingInfo.destination.type
+
+	override val dependencies: Iterable<DependencyInfo>
+
+	override val parameters: Iterable<ParametersInfo>
+
+	init {
+		val mImports = mutableListOf<ImportInfo>()
+		mappingInfo.parseImports(mImports)
+		mImports.sortBy { it.fullName }
+		imports = mImports
+
+		val mDependencies = mutableListOf<DependencyInfo>()
+		mappingInfo.parseDependencies(mDependencies)
+		dependencies = mDependencies
+
+		val mParameters = mutableListOf<ParametersInfo>()
+		mappingInfo.parseParameters(mParameters)
+		parameters = mParameters
+	}
+
+	private fun MappingInfo.parseImports(imports: MutableList<ImportInfo>) {
+		source.addIfNotKotlin(imports)
+		destination.addIfNotKotlin(imports)
+
+		for (parameter in parameters) {
+			parameter.apply {
+				sourceType.addIfNotKotlin(imports)
+				destinationType.addIfNotKotlin(imports)
+			}
+			parameter.converter.addIfNotKotlin(imports)
+		}
+	}
+
+	private fun TypeInfo.addIfNotKotlin(imports: MutableList<ImportInfo>) {
+		val importInfo = ImportInfo(packageName = packageName, type = type)
+		if (packageName != "kotlin" && !imports.contains(importInfo)) {
+			imports.add(importInfo)
+		}
+	}
+
+	private fun ConverterInfo?.addIfNotKotlin(imports: MutableList<ImportInfo>) {
+		when (this) {
+			is ConverterInfo.ClassFunc -> {
+				type.addIfNotKotlin(imports)
+			}
+
+			is ConverterInfo.GlobalFunc -> {
+				val import = ImportInfo(packageName = packageName, type = funcName)
+				if (packageName != "kotlin" && !imports.contains(import)) {
+					imports.add(import)
+				}
+			}
+
+			else -> {}
+		}
+	}
+
+	private fun MappingInfo.parseDependencies(dependencies: MutableList<DependencyInfo>) {
+		for (parameter in parameters) {
+			parameter.converter?.addIfClassFunc(dependencies)
+		}
+	}
+
+	private fun ConverterInfo.addIfClassFunc(dependencies: MutableList<DependencyInfo>) {
+		when (this) {
+			is ConverterInfo.ClassFunc -> {
+				val paramName = paramName
+				dependencies.add(
+					DependencyInfo(
+						parameter = paramName,
+						type = type.type
+					)
+				)
+			}
+
+			else -> {}
+		}
+	}
+
+	private fun MappingInfo.parseParameters(parameters: MutableList<ParametersInfo>) {
+		for (parameter in this.parameters) {
+			if (parameter.converter != null) {
+				parameter.addWithConverter(parameters)
+			}
+
+			if (parameter.sourceType == parameter.destinationType) {
+				parameters.add(
+					ParametersInfo(
+						destination = parameter.destinationName,
+						source = parameter.sourceName,
+						converter = null
+					)
+				)
+				continue
+			}
+
+			throw IllegalStateException(
+				"Parameters link(" +
+						"${parameter.sourceName}: ${parameter.sourceType.fullName}, " +
+						"${parameter.destinationName}: ${parameter.destinationType.fullName}" +
+						"): does not have a converter"
+			)
+		}
+	}
+
+	private fun ParameterLinkInfo.addWithConverter(parameters: MutableList<ParametersInfo>) {
+		when (converter) {
+			is ConverterInfo.GlobalFunc -> {
+				parameters.add(
+					ParametersInfo(
+						destination = destinationName,
+						source = sourceName,
+						converter = converter.funcName
+					)
+				)
+			}
+			is ConverterInfo.ClassFunc -> {
+				parameters.add(
+					ParametersInfo(
+						destination = destinationName,
+						source = sourceName,
+						converter = "${converter.paramName}.${converter.function}"
+					)
+				)
+			}
+
+			else -> {}
+		}
+	}
+}

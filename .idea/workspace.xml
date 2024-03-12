@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="REFACTOR: доработка Data классов">
-      <change beforePath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" afterDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="REFACTOR: доработка ConverterInfo">
+      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/K3MSerializer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/MappingParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/TypeInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/TypeInfo.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +28,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -138,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710256777617</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Подготовка тест модулей к будущему тестированию">
+      <option name="closed" value="true" />
+      <created>1710257026954</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710257026954</updated>
+    </task>
+    <task id="LOCAL-00007" summary="REFACTOR: доработка ConverterInfo">
+      <option name="closed" value="true" />
+      <created>1710258891315</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710258891315</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -146,6 +164,8 @@
     <MESSAGE value="FEAT: Data классы" />
     <MESSAGE value="TEST MODULES" />
     <MESSAGE value="REFACTOR: доработка Data классов" />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: доработка Data классов" />
+    <MESSAGE value="Подготовка тест модулей к будущему тестированию" />
+    <MESSAGE value="REFACTOR: доработка ConverterInfo" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: доработка ConverterInfo" />
   </component>
 </project>
