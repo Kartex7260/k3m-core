@@ -20,9 +20,24 @@ abstract class K3MSymbolProcessor(
 	override fun process(resolver: Resolver): List<KSAnnotated> {
 		val mappings = processMaps(resolver)
 		for (mapping in mappings) {
-			val parser = mappingParserFactory.create(mapping)
-			val serialized = serializer.serialize(parser)
+			try {
+				val parser = mappingParserFactory.create(mapping)
+				val serialized = serializer.serialize(parser)
+				codeGenerator.generate(mapping, serialized)
+			} catch (ex: Exception) {
+				logger.exception(ex)
+			}
 		}
 		return emptyList()
+	}
+
+	private fun CodeGenerator.generate(mappingInfo: MappingInfo, line: String) {
+		val outputStream = createNewFile(
+			dependencies = Dependencies.ALL_FILES,
+			packageName = mappingInfo.packageName,
+			fileName = "${mappingInfo.source.type}To${mappingInfo.destination.type}"
+		)
+		outputStream.write(line.toByteArray())
+		outputStream.close()
 	}
 }

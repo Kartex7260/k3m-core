@@ -12,7 +12,12 @@ class K3MTestSymbolProcessor(
 	codeGenerator: CodeGenerator
 ) : K3MSymbolProcessor(logger, codeGenerator) {
 
+	private var finished = false
+
 	override fun processMaps(resolver: Resolver): List<MappingInfo> {
+		if (finished)
+			return emptyList()
+		finished = true
 		return listOf(
 			MappingInfo(
 				packageName = "kanti.test",

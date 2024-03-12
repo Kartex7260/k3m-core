@@ -123,7 +123,7 @@ class DefaultMappingParser(
 			}
 
 			throw IllegalStateException(
-				"Parameters link(" +
+				"Parsing: Parameters link(" +
 						"${parameter.sourceName}: ${parameter.sourceType.fullName}, " +
 						"${parameter.destinationName}: ${parameter.destinationType.fullName}" +
 						"): does not have a converter"
