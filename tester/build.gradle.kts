@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     ksp(project(":k3m-test-impl"))
+    implementation(project(":k3m-test-impl"))
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 

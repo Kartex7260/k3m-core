@@ -12,6 +12,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.22-1.0.17")
     implementation(project(":k3m-core"))
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
