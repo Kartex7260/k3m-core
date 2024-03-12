@@ -1,12 +1,18 @@
 package kanti.k3m
 
-import com.google.devtools.ksp.processing.Resolver
-import com.google.devtools.ksp.processing.SymbolProcessor
+import com.google.devtools.ksp.processing.*
 import com.google.devtools.ksp.symbol.KSAnnotated
+import kanti.k3m.data.MappingInfo
 
-class K3MSymbolProcessor : SymbolProcessor {
+abstract class K3MSymbolProcessor(
+	private val logger: KSPLogger,
+	private val codeGenerator: CodeGenerator
+) : SymbolProcessor {
+
+	abstract fun processMaps(resolver: Resolver): List<MappingInfo>
 
 	override fun process(resolver: Resolver): List<KSAnnotated> {
+		val mappings = processMaps(resolver)
 		return emptyList()
 	}
 }
