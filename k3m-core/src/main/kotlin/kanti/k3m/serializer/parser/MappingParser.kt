@@ -33,7 +33,7 @@ class DefaultMappingParser(
 
 	init {
 		val mImports = mutableListOf<ImportInfo>()
-		mappingInfo.parseImports(mImports)
+		mappingInfo.parseImports(mappingInfo.packageName, mImports)
 		mImports.sortBy { it.fullName }
 		imports = mImports
 
@@ -46,30 +46,30 @@ class DefaultMappingParser(
 		parameters = mParameters
 	}
 
-	private fun MappingInfo.parseImports(imports: MutableList<ImportInfo>) {
-		source.addIfNotKotlin(imports)
-		destination.addIfNotKotlin(imports)
+	private fun MappingInfo.parseImports(mainPkg: String, imports: MutableList<ImportInfo>) {
+		source.addIfNotKotlin(mainPkg, imports)
+		destination.addIfNotKotlin(mainPkg, imports)
 
 		for (parameter in parameters) {
 			parameter.apply {
-				sourceType.addIfNotKotlin(imports)
-				destinationType.addIfNotKotlin(imports)
+				sourceType.addIfNotKotlin(mainPkg, imports)
+				destinationType.addIfNotKotlin(mainPkg, imports)
 			}
-			parameter.converter.addIfNotKotlin(imports)
+			parameter.converter.addIfNotKotlin(mainPkg, imports)
 		}
 	}
 
-	private fun TypeInfo.addIfNotKotlin(imports: MutableList<ImportInfo>) {
+	private fun TypeInfo.addIfNotKotlin(mainPkg: String, imports: MutableList<ImportInfo>) {
 		val importInfo = ImportInfo(packageName = packageName, type = type)
-		if (packageName != "kotlin" && !imports.contains(importInfo)) {
+		if (packageName != "kotlin" && !imports.contains(importInfo) && packageName != mainPkg) {
 			imports.add(importInfo)
 		}
 	}
 
-	private fun ConverterInfo?.addIfNotKotlin(imports: MutableList<ImportInfo>) {
+	private fun ConverterInfo?.addIfNotKotlin(mainPkg: String, imports: MutableList<ImportInfo>) {
 		when (this) {
 			is ConverterInfo.ClassFunc -> {
-				type.addIfNotKotlin(imports)
+				type.addIfNotKotlin(mainPkg, imports)
 			}
 
 			is ConverterInfo.GlobalFunc -> {
