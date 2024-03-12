@@ -9,13 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="TEST MODULES">
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/ConverterInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/ParameterLinkInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/TypeInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/MappingInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/MappingInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/ParameterInfo.kt" beforeDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="REFACTOR: доработка Data классов">
+      <change beforePath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,13 +130,22 @@
       <option name="project" value="LOCAL" />
       <updated>1710255244350</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="REFACTOR: доработка Data классов">
+      <option name="closed" value="true" />
+      <created>1710256777617</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710256777617</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="FEAT: Data классы" />
     <MESSAGE value="TEST MODULES" />
-    <option name="LAST_COMMIT_MESSAGE" value="TEST MODULES" />
+    <MESSAGE value="REFACTOR: доработка Data классов" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: доработка Data классов" />
   </component>
 </project>
