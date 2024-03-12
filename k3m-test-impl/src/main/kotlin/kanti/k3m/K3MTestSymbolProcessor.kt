@@ -100,6 +100,39 @@ class K3MTestSymbolProcessor(
 						)
 					)
 				)
+			),
+			MappingInfo(
+				packageName = "kanti.car",
+				source = TypeInfo(
+					packageName = "kanti.test",
+					type = "KantiCar"
+				),
+				destination = TypeInfo(
+					packageName = "kartex.test",
+					type = "KartexCar"
+				),
+				parameters = listOf(
+					ParameterLinkInfo(
+						sourceName = "engine",
+						destinationName = "horses",
+						sourceType = TypeInfo(
+							packageName = "kanti.test",
+							type = "Engine"
+						),
+						destinationType = TypeInfo(
+							packageName = "kotlin",
+							type = "String"
+						),
+						converter = ConverterInfo.ClassFunc(
+							function = "convert",
+							type = TypeInfo(
+								packageName = "kanti.test.conv",
+								type = "EngineConverter"
+							),
+							dependencyParameterName = "conv"
+						)
+					)
+				)
 			)
 		)
 	}

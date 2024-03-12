@@ -9,3 +9,7 @@ data class KartexHome(
 	val id: Int = 0,
 	val type2: String = ""
 )
+
+data class KartexCar(
+	val horses: String
+)
