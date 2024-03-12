@@ -51,7 +51,7 @@ class DefaultK3MSerializer : K3MSerializer {
 		val parameters = this.parameters.toList()
 		for (index in parameters.indices) {
 			val parameter = parameters[index]
-			stringBuilder.append(parameter.destination)
+			stringBuilder.append("\t\t").append(parameter.destination)
 				.append(" = ")
 
 			if (parameter.converter == null) {
@@ -62,7 +62,9 @@ class DefaultK3MSerializer : K3MSerializer {
 			}
 
 			if (index < parameters.size - 1)
-				stringBuilder.append(", ")
+				stringBuilder.appendLine(',')
+			else
+				stringBuilder.appendLine()
 		}
 
 		stringBuilder.appendLine("\t)")

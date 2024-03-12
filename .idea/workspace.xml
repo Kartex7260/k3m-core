@@ -9,14 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FEAT: парсер MappingInfo для сериализатора">
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/MappingParserFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/K3MSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/K3MSerializer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/MappingParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/MappingParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParametersInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParameterInfo.kt" afterDir="false" />
-    </list>
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FEAT: генерация" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +168,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710261673318</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="FEAT: сериализатор">
+      <option name="closed" value="true" />
+      <created>1710263545427</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710263545427</updated>
+    </task>
+    <task id="LOCAL-00011" summary="FEAT: генерация">
+      <option name="closed" value="true" />
+      <created>1710264046356</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710264046356</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,6 +195,8 @@
     <MESSAGE value="Подготовка тест модулей к будущему тестированию" />
     <MESSAGE value="REFACTOR: доработка ConverterInfo" />
     <MESSAGE value="FEAT: парсер MappingInfo для сериализатора" />
-    <option name="LAST_COMMIT_MESSAGE" value="FEAT: парсер MappingInfo для сериализатора" />
+    <MESSAGE value="FEAT: сериализатор" />
+    <MESSAGE value="FEAT: генерация" />
+    <option name="LAST_COMMIT_MESSAGE" value="FEAT: генерация" />
   </component>
 </project>
