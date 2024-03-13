@@ -17,3 +17,14 @@ class EngineConverter {
 fun convertEngine(engine: Engine): String {
 	return engine.horses.toString()
 }
+
+fun Int.toTestString(): String {
+	return toString()
+}
+
+object Static {
+
+	fun conv(int: Int): String {
+		return int.toString()
+	}
+}

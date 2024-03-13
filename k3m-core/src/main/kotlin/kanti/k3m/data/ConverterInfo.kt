@@ -21,4 +21,18 @@ sealed class ConverterInfo {
 					it
 			}
 	}
+
+	class ClassFuncStatic(
+		val function: String,
+		val type: TypeInfo
+	) : ConverterInfo()
+
+	class SourceFunc(
+		val function: String
+	) : ConverterInfo()
+
+	class SourceFuncExtension(
+		val function: String,
+		val packageName: String
+	) : ConverterInfo()
 }

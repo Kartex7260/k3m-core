@@ -162,6 +162,95 @@ class K3MTestSymbolProcessor(
 						)
 					)
 				)
+			),
+			MapperInfo(
+				packageName = "kanti.sourceFunc",
+				source = TypeInfo(
+					packageName = "kanti.test",
+					type = "SourceFuncConvertSource"
+				),
+				destination = TypeInfo(
+					packageName = "kartex.test",
+					type = "SourceFuncConvertDestination"
+				),
+				parameters = listOf(
+					ParameterLinkInfo(
+						sourceName = "int",
+						destinationName = "string",
+						sourceType = TypeInfo(
+							packageName = "kotlin",
+							type = "Int"
+						),
+						destinationType = TypeInfo(
+							packageName = "kotlin",
+							type = "String"
+						),
+						converter = ConverterInfo.SourceFunc(
+							function = "toString"
+						)
+					)
+				)
+			),
+			MapperInfo(
+				packageName = "kanti.sourceFunc",
+				source = TypeInfo(
+					packageName = "kanti.test",
+					type = "SourceFuncExtConvertSource"
+				),
+				destination = TypeInfo(
+					packageName = "kartex.test",
+					type = "SourceFuncExtConvertDestination"
+				),
+				parameters = listOf(
+					ParameterLinkInfo(
+						sourceName = "int",
+						destinationName = "string",
+						sourceType = TypeInfo(
+							packageName = "kotlin",
+							type = "Int"
+						),
+						destinationType = TypeInfo(
+							packageName = "kotlin",
+							type = "String"
+						),
+						converter = ConverterInfo.SourceFuncExtension(
+							function = "toTestString",
+							packageName = "kanti.test.conv"
+						)
+					)
+				)
+			),
+			MapperInfo(
+				packageName = "kanti.staticFunc",
+				source = TypeInfo(
+					packageName = "kanti.test",
+					type = "StaticFuncSource"
+				),
+				destination = TypeInfo(
+					packageName = "kartex.test",
+					type = "StaticFuncDestination"
+				),
+				parameters = listOf(
+					ParameterLinkInfo(
+						sourceName = "int",
+						destinationName = "string",
+						sourceType = TypeInfo(
+							packageName = "kotlin",
+							type = "Int"
+						),
+						destinationType = TypeInfo(
+							packageName = "kotlin",
+							type = "String"
+						),
+						converter = ConverterInfo.ClassFuncStatic(
+							function = "conv",
+							type = TypeInfo(
+								packageName = "kanti.test.conv",
+								type = "Static"
+							)
+						)
+					)
+				)
 			)
 		)
 	}

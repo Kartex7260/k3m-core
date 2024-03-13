@@ -2,6 +2,9 @@ package kanti.test
 
 import kanti.car.toKartexCar
 import kanti.home.toKartexHome
+import kanti.sourceFunc.toSourceFuncConvertDestination
+import kanti.sourceFunc.toSourceFuncExtConvertDestination
+import kanti.staticFunc.toStaticFuncDestination
 import kanti.test.conv.EngineConverter
 
 fun main() {
@@ -19,6 +22,18 @@ fun main() {
 	println(kartexCar)
 	val kantiCar2 = kantiCar.toKartexCar()
 	println(kantiCar2)
+
+	val sourceFunConvertSource = SourceFuncConvertSource()
+	val sourceFuncConvertDestination = sourceFunConvertSource.toSourceFuncConvertDestination()
+	println(sourceFuncConvertDestination)
+
+	val sourceFunExtConvertSource = SourceFuncExtConvertSource()
+	val sourceFuncExtConvertDestination = sourceFunExtConvertSource.toSourceFuncExtConvertDestination()
+	println(sourceFuncExtConvertDestination)
+
+	val staticFuncSource = StaticFuncSource()
+	val staticFuncDestination = staticFuncSource.toStaticFuncDestination()
+	println(staticFuncDestination)
 }
 
 data class KantiUser(
@@ -40,3 +55,15 @@ data class KantiCar(
 )
 
 class Engine(val horses: Int = 600)
+
+data class SourceFuncConvertSource(
+	val int: Int = 0
+)
+
+data class SourceFuncExtConvertSource(
+	val int: Int = 0
+)
+
+data class StaticFuncSource(
+	val int: Int = 0
+)

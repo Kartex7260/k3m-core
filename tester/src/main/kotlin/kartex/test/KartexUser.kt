@@ -13,3 +13,15 @@ data class KartexHome(
 data class KartexCar(
 	val horses: String
 )
+
+data class SourceFuncConvertDestination(
+	val string: String
+)
+
+data class SourceFuncExtConvertDestination(
+	val string: String
+)
+
+data class StaticFuncDestination(
+	val string: String
+)

@@ -41,7 +41,18 @@ class ImportsParser : FragmentParser<Iterable<ImportInfo>> {
 
 			is ConverterInfo.GlobalFunc -> {
 				val import = ImportInfo(packageName = packageName, type = funcName)
-				if (packageName != "kotlin" && !imports.contains(import)) {
+				if (packageName != "kotlin" && !imports.contains(import) && packageName != mainPkg) {
+					imports.add(import)
+				}
+			}
+
+			is ConverterInfo.ClassFuncStatic -> {
+				type.addIfNotKotlin(mainPkg, imports)
+			}
+
+			is ConverterInfo.SourceFuncExtension -> {
+				val import = ImportInfo(packageName = packageName, type = function)
+				if (packageName != "kotlin" && !imports.contains(import) && packageName != mainPkg) {
 					imports.add(import)
 				}
 			}

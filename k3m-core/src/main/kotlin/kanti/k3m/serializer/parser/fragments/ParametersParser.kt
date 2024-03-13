@@ -4,6 +4,7 @@ import kanti.k3m.data.ConverterInfo
 import kanti.k3m.data.MapperInfo
 import kanti.k3m.data.ParameterLinkInfo
 import kanti.k3m.data.fullName
+import kanti.k3m.serializer.parser.ConverterType
 import kanti.k3m.serializer.parser.ParameterInfo
 
 class ParametersParser : FragmentParser<Iterable<ParameterInfo>> {
@@ -26,7 +27,8 @@ class ParametersParser : FragmentParser<Iterable<ParameterInfo>> {
 					ParameterInfo(
 						destination = parameter.destinationName,
 						source = parameter.sourceName,
-						converter = null
+						converter = null,
+						converterType = ConverterType.ForSource
 					)
 				)
 				continue
@@ -48,7 +50,8 @@ class ParametersParser : FragmentParser<Iterable<ParameterInfo>> {
 					ParameterInfo(
 						destination = destinationName,
 						source = sourceName,
-						converter = converter.funcName
+						converter = converter.funcName,
+						converterType = ConverterType.ForSource
 					)
 				)
 			}
@@ -57,7 +60,39 @@ class ParametersParser : FragmentParser<Iterable<ParameterInfo>> {
 					ParameterInfo(
 						destination = destinationName,
 						source = sourceName,
-						converter = "${converter.paramName}.${converter.function}"
+						converter = "${converter.paramName}.${converter.function}",
+						converterType = ConverterType.ForSource
+					)
+				)
+			}
+			is ConverterInfo.ClassFuncStatic -> {
+				parameters.add(
+					ParameterInfo(
+						destination = destinationName,
+						source = sourceName,
+						converter = "${converter.type.type}.${converter.function}",
+						converterType = ConverterType.ForSource
+					)
+				)
+			}
+			is ConverterInfo.SourceFunc -> {
+				parameters.add(
+					ParameterInfo(
+						destination = destinationName,
+						source = sourceName,
+						converter = converter.function,
+						converterType = ConverterType.FromSource
+					)
+				)
+			}
+
+			is ConverterInfo.SourceFuncExtension -> {
+				parameters.add(
+					ParameterInfo(
+						destination = destinationName,
+						source = sourceName,
+						converter = converter.function,
+						converterType = ConverterType.FromSource
 					)
 				)
 			}

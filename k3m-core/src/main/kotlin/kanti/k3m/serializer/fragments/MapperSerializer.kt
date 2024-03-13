@@ -1,5 +1,6 @@
 package kanti.k3m.serializer.fragments
 
+import kanti.k3m.serializer.parser.ConverterType
 import kanti.k3m.serializer.parser.ParsedMapper
 
 class MapperSerializer : FragmentSerializer<String> {
@@ -40,8 +41,16 @@ class MapperSerializer : FragmentSerializer<String> {
 			if (parameter.converter == null) {
 				stringBuilder.append(parameter.source)
 			} else {
-				stringBuilder.append(parameter.converter)
-					.append('(').append(parameter.source).append(')')
+				when (parameter.converterType) {
+					ConverterType.ForSource -> {
+						stringBuilder.append(parameter.converter)
+							.append('(').append(parameter.source).append(')')
+					}
+					ConverterType.FromSource -> {
+						stringBuilder.append(parameter.source)
+							.append('.').append(parameter.converter).append("()")
+					}
+				}
 			}
 
 			if (index < parameters.size - 1)
