@@ -9,11 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FIX: ненужные импорты от параметров">
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FEAT: комбинатор, что бы помещать в несколько map функций в один файл">
+      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/generator/DefaultMapperGenerator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/generator/MapperGenerator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/conv/converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/conv/converter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kartex/test/KartexUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kartex/test/KartexUser.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,15 +31,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -48,27 +53,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build k3m.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "temurin-1.8",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Kotlin"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build k3m.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-1.8&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Kotlin&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kiril\IdeaProjects\k3m\k3m-core\src\main\kotlin\kanti\k3m\serializer\parser" />
       <recent name="C:\Users\kiril\IdeaProjects\k3m\tester\src\main\kotlin\kanti\test" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="kanti.k3m.combinator" />
+      <recent name="kanti.k3m.serializer.fragments" />
+      <recent name="kanti.k3m.serializer" />
     </key>
   </component>
   <component name="RunManager">
@@ -221,7 +231,55 @@
       <option name="project" value="LOCAL" />
       <updated>1710265137047</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="TEST: тест с конвертером с зависимостью от класса">
+      <option name="closed" value="true" />
+      <created>1710265735709</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1710265735709</updated>
+    </task>
+    <task id="LOCAL-00017" summary="BREAKING CHANGE: раздробление парсера на фрагменты">
+      <option name="closed" value="true" />
+      <created>1710326665859</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1710326665859</updated>
+    </task>
+    <task id="LOCAL-00018" summary="BREAKING CHANGE: раздробление парсера на фрагменты">
+      <option name="closed" value="true" />
+      <created>1710326705661</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1710326705661</updated>
+    </task>
+    <task id="LOCAL-00019" summary="BREAKING CHANGE: раздробление сериализатора.&#10;&#10;FEAT: сериализатор возвращает дата класс с пакетом, импортами и мап функцией, вместо целой строки">
+      <option name="closed" value="true" />
+      <created>1710329042446</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1710329042446</updated>
+    </task>
+    <task id="LOCAL-00020" summary="FEAT: комбинатор, что бы помещать в несколько map функций в один файл">
+      <option name="closed" value="true" />
+      <created>1710330466314</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1710330466314</updated>
+    </task>
+    <task id="LOCAL-00021" summary="FEAT: комбинатор, что бы помещать в несколько map функций в один файл">
+      <option name="closed" value="true" />
+      <created>1710330859503</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1710330859503</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +307,10 @@
     <MESSAGE value="FIX: импорты" />
     <MESSAGE value="FIX: парсинг с конвертером" />
     <MESSAGE value="FIX: ненужные импорты от параметров" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX: ненужные импорты от параметров" />
+    <MESSAGE value="TEST: тест с конвертером с зависимостью от класса" />
+    <MESSAGE value="BREAKING CHANGE: раздробление парсера на фрагменты" />
+    <MESSAGE value="BREAKING CHANGE: раздробление сериализатора.&#10;&#10;FEAT: сериализатор возвращает дата класс с пакетом, импортами и мап функцией, вместо целой строки" />
+    <MESSAGE value="FEAT: комбинатор, что бы помещать в несколько map функций в один файл" />
+    <option name="LAST_COMMIT_MESSAGE" value="FEAT: комбинатор, что бы помещать в несколько map функций в один файл" />
   </component>
 </project>

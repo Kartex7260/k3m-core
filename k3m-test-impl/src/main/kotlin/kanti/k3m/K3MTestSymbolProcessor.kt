@@ -4,7 +4,7 @@ import com.google.devtools.ksp.processing.CodeGenerator
 import com.google.devtools.ksp.processing.KSPLogger
 import com.google.devtools.ksp.processing.Resolver
 import kanti.k3m.data.ConverterInfo
-import kanti.k3m.data.MappingInfo
+import kanti.k3m.data.MapperInfo
 import kanti.k3m.data.ParameterLinkInfo
 import kanti.k3m.data.TypeInfo
 
@@ -15,12 +15,12 @@ class K3MTestSymbolProcessor(
 
 	private var finished = false
 
-	override fun processMaps(resolver: Resolver): List<MappingInfo> {
+	override fun processMaps(resolver: Resolver): List<MapperInfo> {
 		if (finished)
 			return emptyList()
 		finished = true
 		return listOf(
-			MappingInfo(
+			MapperInfo(
 				packageName = "kanti.test",
 				source = TypeInfo(
 					packageName = "kanti.test",
@@ -59,7 +59,7 @@ class K3MTestSymbolProcessor(
 					)
 				)
 			),
-			MappingInfo(
+			MapperInfo(
 				packageName = "kanti.home",
 				source = TypeInfo(
 					packageName = "kanti.test",
@@ -101,7 +101,7 @@ class K3MTestSymbolProcessor(
 					)
 				)
 			),
-			MappingInfo(
+			MapperInfo(
 				packageName = "kanti.car",
 				source = TypeInfo(
 					packageName = "kanti.test",
