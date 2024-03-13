@@ -10,10 +10,10 @@ data class CombinedMappers(
 	fun combine(): String {
 		val stringBuilder = StringBuilder()
 
-		stringBuilder.appendLine(packageName).appendLine()
+		stringBuilder.append("package ").appendLine(packageName).appendLine()
 
 		for (import in imports) {
-			stringBuilder.append(import)
+			stringBuilder.appendLine(import)
 		}
 		stringBuilder.appendLine()
 
