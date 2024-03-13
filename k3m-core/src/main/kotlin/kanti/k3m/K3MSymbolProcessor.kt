@@ -2,28 +2,31 @@ package kanti.k3m
 
 import com.google.devtools.ksp.processing.*
 import com.google.devtools.ksp.symbol.KSAnnotated
-import kanti.k3m.data.MappingInfo
+import kanti.k3m.combinator.DefaultMapperCombinator
+import kanti.k3m.data.MapperInfo
+import kanti.k3m.data.fullName
 import kanti.k3m.serializer.DefaultK3MSerializer
 import kanti.k3m.serializer.K3MSerializer
-import kanti.k3m.serializer.parser.DefaultMappingParserFactory
-import kanti.k3m.serializer.parser.MappingParserFactory
 
 abstract class K3MSymbolProcessor(
 	private val logger: KSPLogger,
 	private val codeGenerator: CodeGenerator,
-	private val serializer: K3MSerializer = DefaultK3MSerializer(),
-	private val mappingParserFactory: MappingParserFactory = DefaultMappingParserFactory()
+	private val serializer: K3MSerializer = DefaultK3MSerializer()
 ) : SymbolProcessor {
 
-	abstract fun processMaps(resolver: Resolver): List<MappingInfo>
+	abstract fun processMaps(resolver: Resolver): List<MapperInfo>
 
 	override fun process(resolver: Resolver): List<KSAnnotated> {
-		val mappings = processMaps(resolver)
-		for (mapping in mappings) {
+		val mappers = processMaps(resolver)
+		val mapperCombinator = DefaultMapperCombinator()
+		for (mapper in mappers) {
 			try {
-				val parser = mappingParserFactory.create(mapping)
-				val serialized = serializer.serialize(parser)
-				codeGenerator.generate(mapping, serialized)
+				val serializedMapper = serializer.serialize(mapper)
+				mapperCombinator.add(
+					packageName = mapper.packageName,
+					sourceFullName = mapper.source.fullName,
+					serializedMapper = serializedMapper
+				)
 			} catch (ex: Exception) {
 				logger.exception(ex)
 			}
@@ -31,11 +34,11 @@ abstract class K3MSymbolProcessor(
 		return emptyList()
 	}
 
-	private fun CodeGenerator.generate(mappingInfo: MappingInfo, line: String) {
+	private fun CodeGenerator.generate(mapperInfo: MapperInfo, line: String) {
 		val outputStream = createNewFile(
 			dependencies = Dependencies.ALL_FILES,
-			packageName = mappingInfo.packageName,
-			fileName = "${mappingInfo.source.type}To${mappingInfo.destination.type}"
+			packageName = mapperInfo.packageName,
+			fileName = "${mapperInfo.source.type}To${mapperInfo.destination.type}"
 		)
 		outputStream.write(line.toByteArray())
 		outputStream.close()
