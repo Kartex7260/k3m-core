@@ -9,12 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FEAT: предоставление замены зависимости MapperCombinator через MapperCombinatorProvider в K3MSymbolProcessor">
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FIX: импорты при нескольких мэп функций в одном генерируемом файле">
       <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/conv/converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/conv/converter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710333196560</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="FIX: импорты при нескольких мэп функций в одном генерируемом файле">
+      <option name="closed" value="true" />
+      <created>1710333695533</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1710333695533</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,6 +342,7 @@
     <MESSAGE value="FEAT: генератор файлов" />
     <MESSAGE value="FIX: формат пакета и импортов" />
     <MESSAGE value="FEAT: предоставление замены зависимости MapperCombinator через MapperCombinatorProvider в K3MSymbolProcessor" />
-    <option name="LAST_COMMIT_MESSAGE" value="FEAT: предоставление замены зависимости MapperCombinator через MapperCombinatorProvider в K3MSymbolProcessor" />
+    <MESSAGE value="FIX: импорты при нескольких мэп функций в одном генерируемом файле" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: импорты при нескольких мэп функций в одном генерируемом файле" />
   </component>
 </project>
