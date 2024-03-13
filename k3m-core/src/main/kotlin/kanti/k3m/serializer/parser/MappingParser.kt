@@ -5,7 +5,7 @@ import kanti.k3m.serializer.parser.fragments.*
 
 interface MappingParser {
 
-	fun parse(mappingInfo: MappingInfo): ParsedMapper
+	fun parse(mapperInfo: MapperInfo): ParsedMapper
 
 	interface MappingParserFactory {
 

@@ -1,19 +1,19 @@
 package kanti.k3m.serializer.parser.fragments
 
 import kanti.k3m.data.ConverterInfo
-import kanti.k3m.data.MappingInfo
+import kanti.k3m.data.MapperInfo
 import kanti.k3m.data.TypeInfo
 import kanti.k3m.serializer.parser.ImportInfo
 
 class ImportsParser : FragmentParser<Iterable<ImportInfo>> {
 
-	override fun parse(mappingInfo: MappingInfo): Iterable<ImportInfo> {
+	override fun parse(mapperInfo: MapperInfo): Iterable<ImportInfo> {
 		val mImports = mutableListOf<ImportInfo>()
-		mappingInfo.parseImports(mappingInfo.packageName, mImports)
+		mapperInfo.parseImports(mapperInfo.packageName, mImports)
 		return mImports
 	}
 
-	private fun MappingInfo.parseImports(mainPkg: String, imports: MutableList<ImportInfo>) {
+	private fun MapperInfo.parseImports(mainPkg: String, imports: MutableList<ImportInfo>) {
 		source.addIfNotKotlin(mainPkg, imports)
 		destination.addIfNotKotlin(mainPkg, imports)
 

@@ -1,18 +1,18 @@
 package kanti.k3m.serializer.parser.fragments
 
 import kanti.k3m.data.ConverterInfo
-import kanti.k3m.data.MappingInfo
+import kanti.k3m.data.MapperInfo
 import kanti.k3m.serializer.parser.DependencyInfo
 
 class DependenciesParser : FragmentParser<Iterable<DependencyInfo>> {
 
-	override fun parse(mappingInfo: MappingInfo): Iterable<DependencyInfo> {
+	override fun parse(mapperInfo: MapperInfo): Iterable<DependencyInfo> {
 		val dependencies = mutableListOf<DependencyInfo>()
-		mappingInfo.parseDependencies(dependencies)
+		mapperInfo.parseDependencies(dependencies)
 		return dependencies
 	}
 
-	private fun MappingInfo.parseDependencies(dependencies: MutableList<DependencyInfo>) {
+	private fun MapperInfo.parseDependencies(dependencies: MutableList<DependencyInfo>) {
 		for (parameter in parameters) {
 			parameter.converter?.addIfClassFunc(dependencies)
 		}

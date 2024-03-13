@@ -12,14 +12,14 @@ class DefaultMappingParser(
 	private val parametersParser: FragmentParser<Iterable<ParameterInfo>> = ParametersParser()
 ) : MappingParser {
 
-	override fun parse(mappingInfo: MappingInfo): ParsedMapper {
+	override fun parse(mapperInfo: MapperInfo): ParsedMapper {
 		return ParsedMapper(
-			packageName = packageParser.parse(mappingInfo),
-			imports = importsParser.parse(mappingInfo),
-			sourceType = sourceTypeParser.parse(mappingInfo),
-			destinationType = destinationTypeParser.parse(mappingInfo),
-			dependencies = dependenciesParser.parse(mappingInfo),
-			parameters = parametersParser.parse(mappingInfo)
+			packageName = packageParser.parse(mapperInfo),
+			imports = importsParser.parse(mapperInfo),
+			sourceType = sourceTypeParser.parse(mapperInfo),
+			destinationType = destinationTypeParser.parse(mapperInfo),
+			dependencies = dependenciesParser.parse(mapperInfo),
+			parameters = parametersParser.parse(mapperInfo)
 		)
 	}
 

@@ -1,20 +1,20 @@
 package kanti.k3m.serializer.parser.fragments
 
 import kanti.k3m.data.ConverterInfo
-import kanti.k3m.data.MappingInfo
+import kanti.k3m.data.MapperInfo
 import kanti.k3m.data.ParameterLinkInfo
 import kanti.k3m.data.fullName
 import kanti.k3m.serializer.parser.ParameterInfo
 
 class ParametersParser : FragmentParser<Iterable<ParameterInfo>> {
 
-	override fun parse(mappingInfo: MappingInfo): Iterable<ParameterInfo> {
+	override fun parse(mapperInfo: MapperInfo): Iterable<ParameterInfo> {
 		val parameters = mutableListOf<ParameterInfo>()
-		mappingInfo.parseParameters(parameters)
+		mapperInfo.parseParameters(parameters)
 		return parameters
 	}
 
-	private fun MappingInfo.parseParameters(parameters: MutableList<ParameterInfo>) {
+	private fun MapperInfo.parseParameters(parameters: MutableList<ParameterInfo>) {
 		for (parameter in this.parameters) {
 			if (parameter.converter != null) {
 				parameter.addWithConverter(parameters)
