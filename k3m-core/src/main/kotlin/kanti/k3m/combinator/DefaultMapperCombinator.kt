@@ -39,4 +39,11 @@ class DefaultMapperCombinator : MapperCombinator {
 		val sourceFullName: String,
 		val sourceType: String
 	)
+
+	class DefaultMapperCombinatorProvider : MapperCombinator.MapperCombinatorProvider {
+
+		override fun create(): MapperCombinator {
+			return DefaultMapperCombinator()
+		}
+	}
 }

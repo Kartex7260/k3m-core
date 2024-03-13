@@ -3,6 +3,7 @@ package kanti.k3m
 import com.google.devtools.ksp.processing.*
 import com.google.devtools.ksp.symbol.KSAnnotated
 import kanti.k3m.combinator.DefaultMapperCombinator
+import kanti.k3m.combinator.MapperCombinator
 import kanti.k3m.data.MapperInfo
 import kanti.k3m.data.fullName
 import kanti.k3m.generator.DefaultMapperGenerator
@@ -14,6 +15,8 @@ abstract class K3MSymbolProcessor(
 	private val logger: KSPLogger,
 	private val codeGenerator: CodeGenerator,
 	private val serializer: K3MSerializer = DefaultK3MSerializer(),
+	private val mapperCombinator: MapperCombinator.MapperCombinatorProvider =
+		DefaultMapperCombinator.DefaultMapperCombinatorProvider(),
 	private val mapperGenerator: MapperGenerator = DefaultMapperGenerator()
 ) : SymbolProcessor {
 
@@ -21,7 +24,7 @@ abstract class K3MSymbolProcessor(
 
 	override fun process(resolver: Resolver): List<KSAnnotated> {
 		val mappers = processMaps(resolver)
-		val mapperCombinator = DefaultMapperCombinator()
+		val mapperCombinator = mapperCombinator.create()
 		for (mapper in mappers) {
 			try {
 				val serializedMapper = serializer.serialize(mapper)

@@ -12,4 +12,9 @@ interface MapperCombinator {
 		sourceType: String,
 		serializedMapper: SerializedMapper
 	)
+
+	interface MapperCombinatorProvider {
+
+		fun create(): MapperCombinator
+	}
 }
