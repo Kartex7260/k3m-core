@@ -13,3 +13,7 @@ class EngineConverter {
 		return engine.horses.toString()
 	}
 }
+
+fun convertEngine(engine: Engine): String {
+	return engine.horses.toString()
+}

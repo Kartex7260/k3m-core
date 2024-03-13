@@ -17,6 +17,8 @@ fun main() {
 	val kantiCar = KantiCar()
 	val kartexCar = kantiCar.toKartexCar(conv = converter)
 	println(kartexCar)
+	val kantiCar2 = kantiCar.toKartexCar()
+	println(kantiCar2)
 }
 
 data class KantiUser(

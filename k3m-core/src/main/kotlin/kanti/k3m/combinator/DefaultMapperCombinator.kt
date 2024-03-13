@@ -12,7 +12,9 @@ class DefaultMapperCombinator : MapperCombinator {
 			CombinedMappers(
 				packageName = entry.key.packageName,
 				sourceType = entry.key.sourceType,
-				imports = mappersSequence.flatMap { it.imports }.sorted().toList(),
+				imports = mappersSequence.flatMap { it.imports }
+						.distinct()
+						.sorted().toList(),
 				mappers = mappersSequence.map { it.mapper }.toList()
 			)
 		}

@@ -9,13 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FEAT: комбинатор, что бы помещать в несколько map функций в один файл">
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/generator/DefaultMapperGenerator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/generator/MapperGenerator.kt" afterDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FEAT: предоставление замены зависимости MapperCombinator через MapperCombinatorProvider в K3MSymbolProcessor">
       <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-test-impl/src/main/kotlin/kanti/k3m/K3MTestSymbolProcessor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/conv/converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/conv/converter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tester/src/main/kotlin/kanti/test/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +278,31 @@
       <option name="project" value="LOCAL" />
       <updated>1710330859503</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="FEAT: генератор файлов">
+      <option name="closed" value="true" />
+      <created>1710331158741</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1710331158741</updated>
+    </task>
+    <task id="LOCAL-00023" summary="FIX: формат пакета и импортов">
+      <option name="closed" value="true" />
+      <created>1710332966074</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1710332966074</updated>
+    </task>
+    <task id="LOCAL-00024" summary="FEAT: предоставление замены зависимости MapperCombinator через MapperCombinatorProvider в K3MSymbolProcessor">
+      <option name="closed" value="true" />
+      <created>1710333196560</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1710333196560</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,6 +334,9 @@
     <MESSAGE value="BREAKING CHANGE: раздробление парсера на фрагменты" />
     <MESSAGE value="BREAKING CHANGE: раздробление сериализатора.&#10;&#10;FEAT: сериализатор возвращает дата класс с пакетом, импортами и мап функцией, вместо целой строки" />
     <MESSAGE value="FEAT: комбинатор, что бы помещать в несколько map функций в один файл" />
-    <option name="LAST_COMMIT_MESSAGE" value="FEAT: комбинатор, что бы помещать в несколько map функций в один файл" />
+    <MESSAGE value="FEAT: генератор файлов" />
+    <MESSAGE value="FIX: формат пакета и импортов" />
+    <MESSAGE value="FEAT: предоставление замены зависимости MapperCombinator через MapperCombinatorProvider в K3MSymbolProcessor" />
+    <option name="LAST_COMMIT_MESSAGE" value="FEAT: предоставление замены зависимости MapperCombinator через MapperCombinatorProvider в K3MSymbolProcessor" />
   </component>
 </project>
