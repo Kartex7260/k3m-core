@@ -1,14 +1,29 @@
 plugins {
     kotlin("jvm") version "1.9.22"
+    id("maven-publish")
 }
 
-group = "kanti.k3m"
-
+val libGroupId: String by project
+val libArtifactId: String by project
 val libVersion: String by project
+
+group = libGroupId
 version = libVersion
 
 repositories {
     mavenCentral()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = libGroupId
+            artifactId = libArtifactId
+            version = libVersion
+
+            from(components["java"])
+        }
+    }
 }
 
 dependencies {

@@ -9,13 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="README">
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/converters/ConvertersManager.kt" afterDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="VERSION: 1.0-alpha.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/ConverterInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/data/ConverterInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/fragments/MapperSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/fragments/MapperSerializer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParameterInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParameterInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/ParametersParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/ParametersParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +23,44 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/k3m-core">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="k3m-core" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="k3m-core" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="k3m-core" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,6 +75,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Kartex7260"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f6c9a4e1-9024-49dd-821b-d93bbd2f5021" />
+        <option name="url" value="https://github.com/Kartex7260/k3m-core.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,23 +103,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build k3m.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-1.8&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Kotlin&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build k3m.executor": "Run",
+    "Gradle.k3m:k3m-core [publishToMavenLocal].executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "temurin-1.8",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kiril\IdeaProjects\k3m\k3m-core\src\main\kotlin\kanti\k3m\serializer\parser" />
@@ -81,7 +132,29 @@
       <recent name="kanti.k3m.serializer" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.k3m:k3m-core [publishToMavenLocal]">
+    <configuration name="k3m:k3m-core [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/k3m-core" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publishToMavenLocal" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kanti.test.MainKt" />
       <module name="k3m.tester.main" />
@@ -91,6 +164,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.k3m:k3m-core [publishToMavenLocal]" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
@@ -319,7 +393,39 @@
       <option name="project" value="LOCAL" />
       <updated>1710336215857</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="FEAT: добавлена поддержка 3 видов конверторов: Static fun, Func from source, Ext func from source">
+      <option name="closed" value="true" />
+      <created>1710339428012</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1710339428012</updated>
+    </task>
+    <task id="LOCAL-00028" summary="VERSION: 1.0.0-alpha.1">
+      <option name="closed" value="true" />
+      <created>1710756589219</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1710756589219</updated>
+    </task>
+    <task id="LOCAL-00029" summary="VERSION: 1.0-alpha.1">
+      <option name="closed" value="true" />
+      <created>1710760400001</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1710760400001</updated>
+    </task>
+    <task id="LOCAL-00030" summary="VERSION: 1.0-alpha.1">
+      <option name="closed" value="true" />
+      <created>1710760430926</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1710760430926</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,6 +462,9 @@
     <MESSAGE value="FEAT: предоставление замены зависимости MapperCombinator через MapperCombinatorProvider в K3MSymbolProcessor" />
     <MESSAGE value="FIX: импорты при нескольких мэп функций в одном генерируемом файле" />
     <MESSAGE value="README" />
-    <option name="LAST_COMMIT_MESSAGE" value="README" />
+    <MESSAGE value="FEAT: добавлена поддержка 3 видов конверторов: Static fun, Func from source, Ext func from source" />
+    <MESSAGE value="VERSION: 1.0.0-alpha.1" />
+    <MESSAGE value="VERSION: 1.0-alpha.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="VERSION: 1.0-alpha.1" />
   </component>
 </project>
