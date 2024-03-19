@@ -10,3 +10,4 @@ buildscript {
 		classpath(kotlin("gradle-plugin", version = "1.9.22"))
 	}
 }
+include("k3m-ksp-core")

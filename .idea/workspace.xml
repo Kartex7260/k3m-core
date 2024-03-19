@@ -9,21 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="BREAKING CHANGE: Отвязка k3m-core от ksp">
-      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MConst.kt" afterDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FEAT: логирование по всей библиотеке">
+      <change afterPath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MCodeGenerator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MKSPLogger.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MLogger.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MLogger.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MProcessor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/DefaultK3MSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/DefaultK3MSerializer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/fragments/ImportsSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/fragments/ImportsSerializer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/fragments/MapperSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/fragments/MapperSerializer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/DefaultMappingParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/DefaultMappingParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/DependenciesParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/DependenciesParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/DestinationTypeParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/DestinationTypeParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/ImportsParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/ImportsParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/PackageParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/PackageParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/SourceTypeParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/SourceTypeParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,9 +71,9 @@
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -122,6 +115,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build k3m.executor": "Run",
+    "Gradle.k3m:k3m-core [build].executor": "Run",
+    "Gradle.k3m:k3m-core [clean].executor": "Run",
     "Gradle.k3m:k3m-core [publishToMavenLocal].executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -150,6 +145,50 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.k3m:k3m-core [publishToMavenLocal]">
+    <configuration name="k3m:k3m-core [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/k3m-core" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="k3m:k3m-core [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/k3m-core" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="k3m:k3m-core [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -182,6 +221,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.k3m:k3m-core [publishToMavenLocal]" />
+        <item itemvalue="Gradle.k3m:k3m-core [build]" />
+        <item itemvalue="Gradle.k3m:k3m-core [clean]" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
@@ -459,7 +500,39 @@
       <option name="project" value="LOCAL" />
       <updated>1710844878850</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="FEAT: логирование по всей библиотеке">
+      <option name="closed" value="true" />
+      <created>1710848196794</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1710848196794</updated>
+    </task>
+    <task id="LOCAL-00035" summary="FEAT: логирование по всей библиотеке">
+      <option name="closed" value="true" />
+      <created>1710848658457</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1710848658457</updated>
+    </task>
+    <task id="LOCAL-00036" summary="FEAT: логирование по всей библиотеке">
+      <option name="closed" value="true" />
+      <created>1710848773593</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1710848773593</updated>
+    </task>
+    <task id="LOCAL-00037" summary="FEAT: логирование по всей библиотеке">
+      <option name="closed" value="true" />
+      <created>1710848844484</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1710848844484</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FEAT: Data классы" />
     <MESSAGE value="TEST MODULES" />
     <MESSAGE value="REFACTOR: доработка Data классов" />
     <MESSAGE value="Подготовка тест модулей к будущему тестированию" />
@@ -499,6 +571,7 @@
     <MESSAGE value="VERSION: 1.0.0-alpha.1" />
     <MESSAGE value="VERSION: 1.0-alpha.1" />
     <MESSAGE value="BREAKING CHANGE: Отвязка k3m-core от ksp" />
-    <option name="LAST_COMMIT_MESSAGE" value="BREAKING CHANGE: Отвязка k3m-core от ksp" />
+    <MESSAGE value="FEAT: логирование по всей библиотеке" />
+    <option name="LAST_COMMIT_MESSAGE" value="FEAT: логирование по всей библиотеке" />
   </component>
 </project>

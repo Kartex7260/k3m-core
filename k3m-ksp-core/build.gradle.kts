@@ -5,6 +5,7 @@ plugins {
 
 val libGroupId: String by project
 val libArtifactId: String by project
+val libKspArtifactId: String by project
 val libVersion: String by project
 
 group = libGroupId
@@ -12,13 +13,14 @@ version = libVersion
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = libGroupId
-            artifactId = libArtifactId
+            artifactId = libKspArtifactId
             version = libVersion
 
             from(components["java"])
@@ -27,6 +29,8 @@ publishing {
 }
 
 dependencies {
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.22-1.0.17")
+    implementation("$libGroupId:$libArtifactId:$libVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 
