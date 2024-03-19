@@ -1,11 +1,16 @@
 package kanti.k3m.serializer.fragments
 
+import kanti.k3m.K3MConst
+import kanti.k3m.K3MLogger
 import kanti.k3m.serializer.parser.ConverterType
 import kanti.k3m.serializer.parser.ParsedMapper
 
-class MapperSerializer : FragmentSerializer<String> {
+class MapperSerializer(
+	private val logger: K3MLogger = K3MLogger.NonLogger
+) : FragmentSerializer<String> {
 
 	override fun serialize(parsedMapper: ParsedMapper): String {
+		logger.debug(LOG_TAG, "serialize(parsedMapper = $parsedMapper)")
 		val stringBuilder = StringBuilder()
 		parsedMapper.defineFunction(stringBuilder)
 		parsedMapper.defineBlock(stringBuilder)
@@ -13,6 +18,7 @@ class MapperSerializer : FragmentSerializer<String> {
 	}
 
 	private fun ParsedMapper.defineFunction(stringBuilder: StringBuilder) {
+		logger.debug(LOG_TAG, "defineFunction(stringBuilder = $stringBuilder)")
 		stringBuilder.append("fun ").append(sourceType).append('.')
 			.append("to").append(destinationType).append('(')
 
@@ -29,6 +35,7 @@ class MapperSerializer : FragmentSerializer<String> {
 	}
 
 	private fun ParsedMapper.defineBlock(stringBuilder: StringBuilder) {
+		logger.debug(LOG_TAG, "defineBlock(stringBuilder = $stringBuilder)")
 		stringBuilder.appendLine(" {")
 			.appendLine("\treturn $destinationType(")
 
@@ -61,5 +68,10 @@ class MapperSerializer : FragmentSerializer<String> {
 
 		stringBuilder.appendLine("\t)")
 			.append("}")
+	}
+
+	companion object {
+
+		private const val LOG_TAG = "${K3MConst.LOG_TAG} MapperSerializer"
 	}
 }

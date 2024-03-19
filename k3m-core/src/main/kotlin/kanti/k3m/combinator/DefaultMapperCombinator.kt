@@ -1,22 +1,29 @@
 package kanti.k3m.combinator
 
+import kanti.k3m.K3MConst
+import kanti.k3m.K3MLogger
 import kanti.k3m.serializer.SerializedMapper
 
-class DefaultMapperCombinator : MapperCombinator {
+class DefaultMapperCombinator(
+	private val logger: K3MLogger
+) : MapperCombinator {
 
 	private val mappers = HashMap<MapperIndex, MutableList<SerializedMapper>>()
 
 	override val combinedMappers: Iterable<CombinedMappers>
-		get() = mappers.map { entry ->
-			val mappersSequence = entry.value.asSequence()
-			CombinedMappers(
-				packageName = entry.key.packageName,
-				sourceType = entry.key.sourceType,
-				imports = mappersSequence.flatMap { it.imports }
+		get() {
+			logger.debug(LOG_TAG, "combinedMappers")
+			return mappers.map { entry ->
+				val mappersSequence = entry.value.asSequence()
+				CombinedMappers(
+					packageName = entry.key.packageName,
+					sourceType = entry.key.sourceType,
+					imports = mappersSequence.flatMap { it.imports }
 						.distinct()
 						.sorted().toList(),
-				mappers = mappersSequence.map { it.mapper }.toList()
-			)
+					mappers = mappersSequence.map { it.mapper }.toList()
+				)
+			}
 		}
 
 	override fun add(
@@ -25,6 +32,12 @@ class DefaultMapperCombinator : MapperCombinator {
 		sourceType: String,
 		serializedMapper: SerializedMapper
 	) {
+		logger.debug(LOG_TAG, "add(\n" +
+				"\tpackageName = $packageName,\n" +
+				"\tsourceFullName = $sourceFullName,\n" +
+				"\tsourceType = $sourceFullName,\n" +
+				"\tserializedMapper = $serializedMapper\n" +
+				")")
 		val mapperIndex = MapperIndex(
 			packageName = packageName,
 			sourceFullName = sourceFullName,
@@ -36,16 +49,29 @@ class DefaultMapperCombinator : MapperCombinator {
 		mappers[mapperIndex]?.add(serializedMapper)
 	}
 
+	companion object {
+
+		private const val LOG_TAG = "${K3MConst.LOG_TAG} DefaultMapperCombinator"
+	}
+
 	private data class MapperIndex(
 		val packageName: String,
 		val sourceFullName: String,
 		val sourceType: String
 	)
 
-	class DefaultMapperCombinatorProvider : MapperCombinator.MapperCombinatorProvider {
+	class DefaultMapperCombinatorProvider(
+		private val logger: K3MLogger
+	) : MapperCombinator.MapperCombinatorProvider {
 
 		override fun create(): MapperCombinator {
-			return DefaultMapperCombinator()
+			logger.debug(LOG_TAG, "create()")
+			return DefaultMapperCombinator(logger)
+		}
+
+		companion object {
+
+			const val LOG_TAG = "${K3MConst.LOG_TAG} DefaultMapperCombinatorProvider"
 		}
 	}
 }

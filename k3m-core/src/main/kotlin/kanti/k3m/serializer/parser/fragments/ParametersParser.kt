@@ -1,21 +1,26 @@
 package kanti.k3m.serializer.parser.fragments
 
+import kanti.k3m.K3MConst
+import kanti.k3m.K3MLogger
 import kanti.k3m.data.ConverterInfo
 import kanti.k3m.data.MapperInfo
 import kanti.k3m.data.ParameterLinkInfo
-import kanti.k3m.data.fullName
 import kanti.k3m.serializer.parser.ConverterType
 import kanti.k3m.serializer.parser.ParameterInfo
 
-class ParametersParser : FragmentParser<Iterable<ParameterInfo>> {
+class ParametersParser(
+	private val logger: K3MLogger = K3MLogger.NonLogger
+) : FragmentParser<Iterable<ParameterInfo>> {
 
 	override fun parse(mapperInfo: MapperInfo): Iterable<ParameterInfo> {
+		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
 		val parameters = mutableListOf<ParameterInfo>()
 		mapperInfo.parseParameters(parameters)
 		return parameters
 	}
 
 	private fun MapperInfo.parseParameters(parameters: MutableList<ParameterInfo>) {
+		logger.debug(LOG_TAG, "parseParameters(parameters = $parameters)")
 		for (parameter in this.parameters) {
 			if (parameter.converter != null) {
 				parameter.addWithConverter(parameters)
@@ -44,6 +49,7 @@ class ParametersParser : FragmentParser<Iterable<ParameterInfo>> {
 	}
 
 	private fun ParameterLinkInfo.addWithConverter(parameters: MutableList<ParameterInfo>) {
+		logger.debug(LOG_TAG, "addWithConverter(parameters = $parameters)")
 		when (converter) {
 			is ConverterInfo.GlobalFunc -> {
 				parameters.add(
@@ -99,5 +105,10 @@ class ParametersParser : FragmentParser<Iterable<ParameterInfo>> {
 
 			else -> {}
 		}
+	}
+
+	companion object {
+
+		private const val LOG_TAG = "${K3MConst.LOG_TAG} ParametersParser"
 	}
 }
