@@ -14,18 +14,6 @@ repositories {
     mavenCentral()
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = libGroupId
-            artifactId = libArtifactId
-            version = libVersion
-
-            from(components["java"])
-        }
-    }
-}
-
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 }

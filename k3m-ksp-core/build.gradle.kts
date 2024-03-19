@@ -16,18 +16,6 @@ repositories {
     mavenLocal()
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = libGroupId
-            artifactId = libKspArtifactId
-            version = libVersion
-
-            from(components["java"])
-        }
-    }
-}
-
 dependencies {
     implementation("com.google.devtools.ksp:symbol-processing-api:1.9.22-1.0.17")
     implementation("$libGroupId:$libArtifactId:$libVersion")
