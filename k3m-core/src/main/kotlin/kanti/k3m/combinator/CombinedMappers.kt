@@ -7,6 +7,10 @@ data class CombinedMappers(
 	val mappers: Iterable<String>
 ) {
 
+	override fun toString(): String {
+		return "CombinedMappers(package=$packageName, sourceType=$sourceType)"
+	}
+
 	fun combine(): String {
 		val stringBuilder = StringBuilder()
 

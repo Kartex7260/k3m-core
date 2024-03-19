@@ -27,7 +27,7 @@ publishing {
 }
 
 dependencies {
-    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.22-1.0.17")
+//    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.22-1.0.17")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 

@@ -4,8 +4,6 @@ plugins {
 }
 rootProject.name = "k3m"
 include("k3m-core")
-include("k3m-test-impl")
-include("tester")
 
 buildscript {
 	dependencies {

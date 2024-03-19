@@ -10,8 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/k3m-core" />
-            <option value="$PROJECT_DIR$/k3m-test-impl" />
-            <option value="$PROJECT_DIR$/tester" />
           </set>
         </option>
       </GradleProjectSettings>

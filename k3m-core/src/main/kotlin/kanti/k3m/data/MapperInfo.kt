@@ -5,4 +5,9 @@ data class MapperInfo(
 	val source: TypeInfo,
 	val destination: TypeInfo,
 	val parameters: Iterable<ParameterLinkInfo>
-)
+) {
+
+	override fun toString(): String {
+		return "MapperInfo(source=$source, destination=$destination)"
+	}
+}
