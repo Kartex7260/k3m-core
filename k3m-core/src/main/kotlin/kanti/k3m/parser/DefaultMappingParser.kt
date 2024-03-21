@@ -1,18 +1,18 @@
-package kanti.k3m.serializer.parser
+package kanti.k3m.parser
 
 import kanti.k3m.K3MConst
 import kanti.k3m.K3MLogger
+import kanti.k3m.parser.fragments.*
 import kanti.k3m.symbol.MapperInfo
-import kanti.k3m.serializer.parser.fragments.*
 
 class DefaultMappingParser(
 	private val logger: K3MLogger = K3MLogger.NonLogger,
 	private val packageParser: FragmentParser<String> = PackageParser(logger),
-	private val importsParser: FragmentParser<Iterable<ImportInfo>> = ImportsParser(logger),
+	private val importsParser: FragmentParser<Sequence<ParsedImport>> = ImportsParser(logger),
 	private val sourceTypeParser: FragmentParser<String> = SourceTypeParser(logger),
 	private val destinationTypeParser: FragmentParser<String> = DestinationTypeParser(logger),
-	private val dependenciesParser: FragmentParser<Iterable<DependencyInfo>> = DependenciesParser(logger),
-	private val parametersParser: FragmentParser<Iterable<ParameterInfo>> = ParametersParser()
+	private val dependenciesParser: FragmentParser<Sequence<ParsedDependency>> = DependenciesParser(logger),
+	private val parametersParser: FragmentParser<Sequence<ParsedParameter>> = ParametersParser()
 ) : MappingParser {
 
 	override fun parse(mapperInfo: MapperInfo): ParsedMapper {
@@ -38,11 +38,11 @@ class DefaultMappingParser(
 
 		override fun create(
 			packageParser: FragmentParser<String>,
-			importsParser: FragmentParser<Iterable<ImportInfo>>,
+			importsParser: FragmentParser<Sequence<ParsedImport>>,
 			sourceTypeParser: FragmentParser<String>,
 			destinationTypeParser: FragmentParser<String>,
-			dependenciesParser: FragmentParser<Iterable<DependencyInfo>>,
-			parametersParser: FragmentParser<Iterable<ParameterInfo>>
+			dependenciesParser: FragmentParser<Sequence<ParsedDependency>>,
+			parametersParser: FragmentParser<Sequence<ParsedParameter>>
 		): MappingParser {
 			return DefaultMappingParser(
 				logger = logger,

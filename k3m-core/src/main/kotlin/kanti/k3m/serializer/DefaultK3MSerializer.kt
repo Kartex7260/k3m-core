@@ -6,8 +6,8 @@ import kanti.k3m.symbol.MapperInfo
 import kanti.k3m.serializer.fragments.FragmentSerializer
 import kanti.k3m.serializer.fragments.ImportsSerializer
 import kanti.k3m.serializer.fragments.MapperSerializer
-import kanti.k3m.serializer.parser.DefaultMappingParser
-import kanti.k3m.serializer.parser.MappingParser
+import kanti.k3m.parser.DefaultMappingParser
+import kanti.k3m.parser.MappingParser
 
 class DefaultK3MSerializer(
 	private val logger: K3MLogger = K3MLogger.NonLogger,

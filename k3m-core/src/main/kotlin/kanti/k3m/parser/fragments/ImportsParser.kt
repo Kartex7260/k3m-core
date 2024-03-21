@@ -1,24 +1,24 @@
-package kanti.k3m.serializer.parser.fragments
+package kanti.k3m.parser.fragments
 
 import kanti.k3m.K3MConst
 import kanti.k3m.K3MLogger
 import kanti.k3m.symbol.ConverterInfo
 import kanti.k3m.symbol.MapperInfo
 import kanti.k3m.symbol.TypeInfo
-import kanti.k3m.serializer.parser.ImportInfo
+import kanti.k3m.parser.ParsedImport
 
 class ImportsParser(
 	private val logger: K3MLogger = K3MLogger.NonLogger
-) : FragmentParser<Iterable<ImportInfo>> {
+) : FragmentParser<Sequence<ParsedImport>> {
 
-	override fun parse(mapperInfo: MapperInfo): Iterable<ImportInfo> {
+	override fun parse(mapperInfo: MapperInfo): Sequence<ParsedImport> {
 		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
-		val mImports = mutableListOf<ImportInfo>()
+		val mImports = mutableListOf<ParsedImport>()
 		mapperInfo.parseImports(mapperInfo.packageName, mImports)
-		return mImports
+		return mImports.asSequence()
 	}
 
-	private fun MapperInfo.parseImports(mainPkg: String, imports: MutableList<ImportInfo>) {
+	private fun MapperInfo.parseImports(mainPkg: String, imports: MutableList<ParsedImport>) {
 		logger.debug(LOG_TAG, "parseImports(mainPkg = $mainPkg, imports = $imports)")
 		source.addIfNotKotlin(mainPkg, imports)
 		destination.addIfNotKotlin(mainPkg, imports)
@@ -32,15 +32,15 @@ class ImportsParser(
 		}
 	}
 
-	private fun TypeInfo.addIfNotKotlin(mainPkg: String, imports: MutableList<ImportInfo>) {
+	private fun TypeInfo.addIfNotKotlin(mainPkg: String, imports: MutableList<ParsedImport>) {
 		logger.debug(LOG_TAG, "addIfNotKotlin(mainPkg = $mainPkg, imports = $imports)")
-		val importInfo = ImportInfo(packageName = packageName, type = type)
-		if (packageName != "kotlin" && !imports.contains(importInfo) && packageName != mainPkg) {
-			imports.add(importInfo)
+		val parsedImport = ParsedImport(packageName = packageName, type = type)
+		if (packageName != "kotlin" && !imports.contains(parsedImport) && packageName != mainPkg) {
+			imports.add(parsedImport)
 		}
 	}
 
-	private fun ConverterInfo?.addIfNotKotlin(mainPkg: String, imports: MutableList<ImportInfo>) {
+	private fun ConverterInfo?.addIfNotKotlin(mainPkg: String, imports: MutableList<ParsedImport>) {
 		logger.debug(LOG_TAG, "addIfNotKotlin(mainPkg = $mainPkg, imports = $imports)")
 		when (this) {
 			is ConverterInfo.ClassFunc -> {
@@ -48,7 +48,7 @@ class ImportsParser(
 			}
 
 			is ConverterInfo.GlobalFunc -> {
-				val import = ImportInfo(packageName = packageName, type = funcName)
+				val import = ParsedImport(packageName = packageName, type = funcName)
 				if (packageName != "kotlin" && !imports.contains(import) && packageName != mainPkg) {
 					imports.add(import)
 				}
@@ -59,7 +59,7 @@ class ImportsParser(
 			}
 
 			is ConverterInfo.SourceFuncExtension -> {
-				val import = ImportInfo(packageName = packageName, type = function)
+				val import = ParsedImport(packageName = packageName, type = function)
 				if (packageName != "kotlin" && !imports.contains(import) && packageName != mainPkg) {
 					imports.add(import)
 				}

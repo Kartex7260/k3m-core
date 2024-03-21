@@ -1,6 +1,6 @@
-package kanti.k3m.serializer.parser
+package kanti.k3m.parser
 
-data class ImportInfo(
+data class ParsedImport(
 	val packageName: String,
 	val type: String
 ) {

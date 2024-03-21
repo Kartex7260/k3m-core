@@ -1,25 +1,25 @@
-package kanti.k3m.serializer.parser.fragments
+package kanti.k3m.parser.fragments
 
 import kanti.k3m.K3MConst
 import kanti.k3m.K3MLogger
 import kanti.k3m.symbol.ConverterInfo
 import kanti.k3m.symbol.MapperInfo
 import kanti.k3m.symbol.ParameterLinkInfo
-import kanti.k3m.serializer.parser.ConverterType
-import kanti.k3m.serializer.parser.ParameterInfo
+import kanti.k3m.parser.ConverterType
+import kanti.k3m.parser.ParsedParameter
 
 class ParametersParser(
 	private val logger: K3MLogger = K3MLogger.NonLogger
-) : FragmentParser<Iterable<ParameterInfo>> {
+) : FragmentParser<Sequence<ParsedParameter>> {
 
-	override fun parse(mapperInfo: MapperInfo): Iterable<ParameterInfo> {
+	override fun parse(mapperInfo: MapperInfo): Sequence<ParsedParameter> {
 		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
-		val parameters = mutableListOf<ParameterInfo>()
+		val parameters = mutableListOf<ParsedParameter>()
 		mapperInfo.parseParameters(parameters)
-		return parameters
+		return parameters.asSequence()
 	}
 
-	private fun MapperInfo.parseParameters(parameters: MutableList<ParameterInfo>) {
+	private fun MapperInfo.parseParameters(parameters: MutableList<ParsedParameter>) {
 		logger.debug(LOG_TAG, "parseParameters(parameters = $parameters)")
 		for (parameter in this.parameters) {
 			if (parameter.converter != null) {
@@ -29,7 +29,7 @@ class ParametersParser(
 
 			if (parameter.sourceType == parameter.destinationType) {
 				parameters.add(
-					ParameterInfo(
+					ParsedParameter(
 						destination = parameter.destinationName,
 						source = parameter.sourceName,
 						converter = null,
@@ -48,12 +48,12 @@ class ParametersParser(
 		}
 	}
 
-	private fun ParameterLinkInfo.addWithConverter(parameters: MutableList<ParameterInfo>) {
+	private fun ParameterLinkInfo.addWithConverter(parameters: MutableList<ParsedParameter>) {
 		logger.debug(LOG_TAG, "addWithConverter(parameters = $parameters)")
 		when (converter) {
 			is ConverterInfo.GlobalFunc -> {
 				parameters.add(
-					ParameterInfo(
+					ParsedParameter(
 						destination = destinationName,
 						source = sourceName,
 						converter = converter.funcName,
@@ -63,7 +63,7 @@ class ParametersParser(
 			}
 			is ConverterInfo.ClassFunc -> {
 				parameters.add(
-					ParameterInfo(
+					ParsedParameter(
 						destination = destinationName,
 						source = sourceName,
 						converter = "${converter.paramName}.${converter.function}",
@@ -73,7 +73,7 @@ class ParametersParser(
 			}
 			is ConverterInfo.ClassFuncStatic -> {
 				parameters.add(
-					ParameterInfo(
+					ParsedParameter(
 						destination = destinationName,
 						source = sourceName,
 						converter = "${converter.type.type}.${converter.function}",
@@ -83,7 +83,7 @@ class ParametersParser(
 			}
 			is ConverterInfo.SourceFunc -> {
 				parameters.add(
-					ParameterInfo(
+					ParsedParameter(
 						destination = destinationName,
 						source = sourceName,
 						converter = converter.function,
@@ -94,7 +94,7 @@ class ParametersParser(
 
 			is ConverterInfo.SourceFuncExtension -> {
 				parameters.add(
-					ParameterInfo(
+					ParsedParameter(
 						destination = destinationName,
 						source = sourceName,
 						converter = converter.function,

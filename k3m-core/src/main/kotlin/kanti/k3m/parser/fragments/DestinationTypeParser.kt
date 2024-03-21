@@ -1,4 +1,4 @@
-package kanti.k3m.serializer.parser.fragments
+package kanti.k3m.parser.fragments
 
 import kanti.k3m.K3MConst
 import kanti.k3m.K3MLogger

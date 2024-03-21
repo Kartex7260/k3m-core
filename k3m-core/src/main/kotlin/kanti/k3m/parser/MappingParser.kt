@@ -1,6 +1,6 @@
-package kanti.k3m.serializer.parser
+package kanti.k3m.parser
 
-import kanti.k3m.serializer.parser.fragments.*
+import kanti.k3m.parser.fragments.*
 import kanti.k3m.symbol.MapperInfo
 
 interface MappingParser {
@@ -11,11 +11,11 @@ interface MappingParser {
 
 		fun create(
 			packageParser: FragmentParser<String> = PackageParser(),
-			importsParser: FragmentParser<Iterable<ImportInfo>> = ImportsParser(),
+			importsParser: FragmentParser<Sequence<ParsedImport>> = ImportsParser(),
 			sourceTypeParser: FragmentParser<String> = SourceTypeParser(),
 			destinationTypeParser: FragmentParser<String> = DestinationTypeParser(),
-			dependenciesParser: FragmentParser<Iterable<DependencyInfo>> = DependenciesParser(),
-			parametersParser: FragmentParser<Iterable<ParameterInfo>> = ParametersParser()
+			dependenciesParser: FragmentParser<Sequence<ParsedDependency>> = DependenciesParser(),
+			parametersParser: FragmentParser<Sequence<ParsedParameter>> = ParametersParser()
 		): MappingParser
 	}
 }
