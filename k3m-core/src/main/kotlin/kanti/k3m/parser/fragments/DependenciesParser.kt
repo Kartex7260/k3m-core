@@ -12,25 +12,21 @@ class DependenciesParser(
 
 	override fun parse(mapperInfo: MapperInfo): Sequence<ParsedDependency> {
 		logger.debug(LOG_TAG, "Parsing dependencies from the \"$mapperInfo\" mapper")
-		val dependencies = mutableListOf<ParsedDependency>()
-		mapperInfo.parseDependencies(dependencies)
-		return dependencies.asSequence()
-	}
-
-	private fun MapperInfo.parseDependencies(dependencies: MutableList<ParsedDependency>) {
-		for (parameter in parameters) {
-			parameter.converter?.addIfClassFunc(dependencies)
+		return sequence {
+			for (parameter in mapperInfo.parameters) {
+				addIfClassFunc(parameter.converter)
+			}
 		}
 	}
 
-	private fun ConverterInfo.addIfClassFunc(dependencies: MutableList<ParsedDependency>) {
-		when (this) {
+	private suspend fun SequenceScope<ParsedDependency>.addIfClassFunc(converter: ConverterInfo?) {
+		when (converter) {
 			is ConverterInfo.ClassFunc -> {
-				val paramName = paramName
-				dependencies.add(
+				val paramName = converter.paramName
+				yield(
 					ParsedDependency(
 						parameter = paramName,
-						type = type.type
+						type = converter.type.type
 					)
 				)
 			}
