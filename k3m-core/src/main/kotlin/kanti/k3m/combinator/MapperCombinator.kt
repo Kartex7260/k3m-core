@@ -8,7 +8,6 @@ interface MapperCombinator {
 
 	fun add(
 		packageName: String,
-		sourceFullName: String,
 		sourceType: String,
 		serializedMapper: SerializedMapper
 	)

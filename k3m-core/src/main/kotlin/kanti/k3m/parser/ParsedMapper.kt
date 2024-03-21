@@ -7,4 +7,9 @@ data class ParsedMapper(
 	val destinationType: String,
 	val dependencies: Sequence<ParsedDependency>,
 	val parameters: Sequence<ParsedParameter>
-)
+) {
+
+	override fun toString(): String {
+		return "ParsedMapper(packageName=$packageName, sourceType = $sourceType)"
+	}
+}

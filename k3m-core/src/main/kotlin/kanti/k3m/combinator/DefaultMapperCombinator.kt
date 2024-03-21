@@ -29,14 +29,12 @@ class DefaultMapperCombinator(
 
 	override fun add(
 		packageName: String,
-		sourceFullName: String,
 		sourceType: String,
 		serializedMapper: SerializedMapper
 	) {
 		logger.debug(LOG_TAG, "Add $packageName.$sourceType mapper")
 		val mapperIndex = MapperIndex(
 			packageName = packageName,
-			sourceFullName = sourceFullName,
 			sourceType = sourceType
 		)
 		if (!mappers.containsKey(mapperIndex)) {
@@ -52,12 +50,11 @@ class DefaultMapperCombinator(
 
 	private data class MapperIndex(
 		val packageName: String,
-		val sourceFullName: String,
 		val sourceType: String
 	) {
 
 		override fun toString(): String {
-			return "$packageName.$sourceFullName"
+			return "$packageName.$sourceType"
 		}
 	}
 
@@ -66,7 +63,6 @@ class DefaultMapperCombinator(
 	) : MapperCombinator.MapperCombinatorProvider {
 
 		override fun create(): MapperCombinator {
-			logger.debug(LOG_TAG, "create()")
 			return DefaultMapperCombinator(logger)
 		}
 

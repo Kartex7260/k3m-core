@@ -10,9 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="REFACTOR: логирование">
-      <change beforePath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MCodeGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MCodeGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" afterDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="REFACTOR: парсинг зависимостей">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MProcessor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/MapperCombinator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/MapperCombinator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/logger/BaseK3MLogger.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/logger/BaseK3MLogger.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +41,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -128,7 +147,7 @@
       <recent name="kanti.k3m.serializer" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.k3m [publishToMavenLocal]">
+  <component name="RunManager" selected="Gradle.k3m [build]">
     <configuration name="k3m [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -241,9 +260,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.k3m [publishToMavenLocal]" />
         <item itemvalue="Gradle.k3m [build]" />
         <item itemvalue="Gradle.k3m [clean]" />
+        <item itemvalue="Gradle.k3m [publishToMavenLocal]" />
         <item itemvalue="Gradle.k3m:k3m-ksp-core [publishToMavenLocal]" />
         <item itemvalue="Gradle.k3m:k3m-core [publishToMavenLocal]" />
       </list>
@@ -618,7 +637,39 @@
       <option name="project" value="LOCAL" />
       <updated>1711033387590</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="REFACTOR: логирование">
+      <option name="closed" value="true" />
+      <created>1711033622229</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1711033622229</updated>
+    </task>
+    <task id="LOCAL-00047" summary="REFACTOR: преобразование imports через Sequence">
+      <option name="closed" value="true" />
+      <created>1711041028991</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1711041028991</updated>
+    </task>
+    <task id="LOCAL-00048" summary="REFACTOR:  парсинг импортов">
+      <option name="closed" value="true" />
+      <created>1711042473009</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1711042473009</updated>
+    </task>
+    <task id="LOCAL-00049" summary="REFACTOR: парсинг зависимостей">
+      <option name="closed" value="true" />
+      <created>1711042658617</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1711042658617</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -633,9 +684,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FIX: импорты" />
-    <MESSAGE value="FIX: парсинг с конвертером" />
-    <MESSAGE value="FIX: ненужные импорты от параметров" />
     <MESSAGE value="TEST: тест с конвертером с зависимостью от класса" />
     <MESSAGE value="BREAKING CHANGE: раздробление парсера на фрагменты" />
     <MESSAGE value="BREAKING CHANGE: раздробление сериализатора.&#10;&#10;FEAT: сериализатор возвращает дата класс с пакетом, импортами и мап функцией, вместо целой строки" />
@@ -658,6 +706,9 @@
     <MESSAGE value="BREAKING CHANGE: K3MConst -&gt; Const" />
     <MESSAGE value="FIX: сборка k3m-ksp-core" />
     <MESSAGE value="REFACTOR: логирование" />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: логирование" />
+    <MESSAGE value="REFACTOR: преобразование imports через Sequence" />
+    <MESSAGE value="REFACTOR:  парсинг импортов" />
+    <MESSAGE value="REFACTOR: парсинг зависимостей" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: парсинг зависимостей" />
   </component>
 </project>

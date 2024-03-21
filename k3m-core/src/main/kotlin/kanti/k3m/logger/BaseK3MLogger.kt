@@ -27,6 +27,6 @@ abstract class BaseK3MLogger : K3MLogger {
 	abstract fun error(line: String, symbol: Any?)
 
 	private fun format(tag: String, message: String): String {
-		return "[$tag]: $message"
+		return "$tag: $message"
 	}
 }
