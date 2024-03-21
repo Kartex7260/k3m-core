@@ -14,28 +14,24 @@ class ParametersParser(
 
 	override fun parse(mapperInfo: MapperInfo): Sequence<ParsedParameter> {
 		logger.debug(LOG_TAG, "Parsing parameters from the \"$mapperInfo\" mapper")
-		val parameters = mutableListOf<ParsedParameter>()
-		mapperInfo.parseParameters(parameters)
-		return parameters.asSequence()
+		return mapperInfo.parameters.parseParameters(mapperInfo.isSourceCastToDestination)
 	}
 
-	private fun MapperInfo.parseParameters(parameters: MutableList<ParsedParameter>) {
-		for (parameter in this.parameters) {
+	private fun Sequence<ParameterLinkInfo>.parseParameters(
+		isSourceCastToDestination: Boolean
+	): Sequence<ParsedParameter> {
+		return map { parameter ->
 			if (parameter.converter != null) {
-				parameter.addWithConverter(parameters)
-				continue
+				return@map parameter.toParsedParameter()
 			}
 
-			if (parameter.sourceType == parameter.destinationType) {
-				parameters.add(
-					ParsedParameter(
-						destination = parameter.destinationName,
-						source = parameter.sourceName,
-						converter = null,
-						converterType = ConverterType.ForSource
-					)
+			if (parameter.sourceType == parameter.destinationType || isSourceCastToDestination) {
+				return@map ParsedParameter(
+					destination = parameter.destinationName,
+					source = parameter.sourceName,
+					converter = null,
+					converterType = ConverterType.ForSource
 				)
-				continue
 			}
 
 			throw IllegalStateException(
@@ -47,62 +43,61 @@ class ParametersParser(
 		}
 	}
 
-	private fun ParameterLinkInfo.addWithConverter(parameters: MutableList<ParsedParameter>) {
-		when (converter) {
+	private fun ParameterLinkInfo.toParsedParameter(): ParsedParameter {
+		return when (converter) {
 			is ConverterInfo.GlobalFunc -> {
-				parameters.add(
-					ParsedParameter(
-						destination = destinationName,
-						source = sourceName,
-						converter = converter.funcName,
-						converterType = ConverterType.ForSource
-					)
+				ParsedParameter(
+					destination = destinationName,
+					source = sourceName,
+					converter = converter.funcName,
+					converterType = ConverterType.ForSource
 				)
 			}
 			is ConverterInfo.ClassFunc -> {
-				parameters.add(
-					ParsedParameter(
-						destination = destinationName,
-						source = sourceName,
-						converter = "${converter.paramName}.${converter.function}",
-						converterType = ConverterType.ForSource
-					)
+				ParsedParameter(
+					destination = destinationName,
+					source = sourceName,
+					converter = "${converter.paramName}.${converter.function}",
+					converterType = ConverterType.ForSource
 				)
 			}
 			is ConverterInfo.ClassFuncStatic -> {
-				parameters.add(
-					ParsedParameter(
-						destination = destinationName,
-						source = sourceName,
-						converter = "${converter.type.type}.${converter.function}",
-						converterType = ConverterType.ForSource
-					)
+				ParsedParameter(
+					destination = destinationName,
+					source = sourceName,
+					converter = "${converter.type.type}.${converter.function}",
+					converterType = ConverterType.ForSource
 				)
 			}
 			is ConverterInfo.SourceFunc -> {
-				parameters.add(
-					ParsedParameter(
-						destination = destinationName,
-						source = sourceName,
-						converter = converter.function,
-						converterType = ConverterType.FromSource
-					)
+				ParsedParameter(
+					destination = destinationName,
+					source = sourceName,
+					converter = converter.function,
+					converterType = ConverterType.FromSource
 				)
 			}
 
 			is ConverterInfo.SourceFuncExtension -> {
-				parameters.add(
-					ParsedParameter(
-						destination = destinationName,
-						source = sourceName,
-						converter = converter.function,
-						converterType = ConverterType.FromSource
-					)
+				ParsedParameter(
+					destination = destinationName,
+					source = sourceName,
+					converter = converter.function,
+					converterType = ConverterType.FromSource
 				)
 			}
 
-			else -> {}
+			else -> throw notHaveConverter()
 		}
+	}
+
+	private fun ParameterLinkInfo.notHaveConverter(): Exception {
+		return IllegalStateException(
+			"Parsing: Parameters link(" +
+					"${sourceName}: ${sourceType.fullName}, " +
+					"${destinationName}: ${destinationType.fullName}" +
+					"): does not have a converter"
+		)
 	}
 
 	companion object {
