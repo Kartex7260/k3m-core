@@ -38,6 +38,6 @@ class K3MProcessor(
 
 	companion object {
 
-		private const val LOG_TAG = "${K3MConst.LOG_TAG} K3MProcessor"
+		private const val LOG_TAG = "${Const.LOG_TAG} K3MProcessor"
 	}
 }

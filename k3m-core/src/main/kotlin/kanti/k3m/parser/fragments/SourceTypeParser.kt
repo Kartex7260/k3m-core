@@ -1,6 +1,6 @@
 package kanti.k3m.parser.fragments
 
-import kanti.k3m.K3MConst
+import kanti.k3m.Const
 import kanti.k3m.logger.K3MLogger
 import kanti.k3m.symbol.MapperInfo
 
@@ -15,6 +15,6 @@ class SourceTypeParser(
 
 	companion object {
 
-		private const val LOG_TAG = "${K3MConst.LOG_TAG} SourceTypeParser"
+		private const val LOG_TAG = "${Const.LOG_TAG} SourceTypeParser"
 	}
 }

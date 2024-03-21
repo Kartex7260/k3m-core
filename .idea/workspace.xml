@@ -10,16 +10,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="BREAKING CHANGE: kanti.k3m.data -&gt; kanti.k3m.symbol">
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/DefaultMappingParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/DefaultMappingParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/DependencyInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParsedDependency.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ImportInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParsedImport.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/MappingParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/MappingParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParameterInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParsedParameter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParsedMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/ParsedMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/DependenciesParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/DependenciesParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/ImportsParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/ImportsParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/ParametersParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/serializer/parser/fragments/ParametersParser.kt" afterDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="BREAKING CHANGE: kanti.k3m.K3MLogger -&gt; kanti.k3.logger.K3MLogger">
+      <change afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/logger/BaseK3MLogger.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +66,8 @@
         <option value="Kotlin File" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -598,7 +590,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711026363491</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="BREAKING CHANGE: kanti.k3m.serializer.parser -&gt; kanti.k3m.parser">
+      <option name="closed" value="true" />
+      <created>1711026948200</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1711026948200</updated>
+    </task>
+    <task id="LOCAL-00042" summary="BREAKING CHANGE: kanti.k3m.K3MLogger -&gt; kanti.k3.logger.K3MLogger">
+      <option name="closed" value="true" />
+      <created>1711027038494</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1711027038494</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -613,8 +621,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="REFACTOR: доработка ConverterInfo" />
-    <MESSAGE value="FEAT: парсер MappingInfo для сериализатора" />
     <MESSAGE value="FEAT: сериализатор" />
     <MESSAGE value="FEAT: генерация" />
     <MESSAGE value="FIX: формат кода" />
@@ -638,6 +644,8 @@
     <MESSAGE value="FEAT: k3m-ksp-core" />
     <MESSAGE value="PUBLISHING: настройка публикации" />
     <MESSAGE value="BREAKING CHANGE: kanti.k3m.data -&gt; kanti.k3m.symbol" />
-    <option name="LAST_COMMIT_MESSAGE" value="BREAKING CHANGE: kanti.k3m.data -&gt; kanti.k3m.symbol" />
+    <MESSAGE value="BREAKING CHANGE: kanti.k3m.serializer.parser -&gt; kanti.k3m.parser" />
+    <MESSAGE value="BREAKING CHANGE: kanti.k3m.K3MLogger -&gt; kanti.k3.logger.K3MLogger" />
+    <option name="LAST_COMMIT_MESSAGE" value="BREAKING CHANGE: kanti.k3m.K3MLogger -&gt; kanti.k3.logger.K3MLogger" />
   </component>
 </project>
