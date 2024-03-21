@@ -13,14 +13,13 @@ class ParametersParser(
 ) : FragmentParser<Sequence<ParsedParameter>> {
 
 	override fun parse(mapperInfo: MapperInfo): Sequence<ParsedParameter> {
-		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
+		logger.debug(LOG_TAG, "Parsing parameters from the \"$mapperInfo\" mapper")
 		val parameters = mutableListOf<ParsedParameter>()
 		mapperInfo.parseParameters(parameters)
 		return parameters.asSequence()
 	}
 
 	private fun MapperInfo.parseParameters(parameters: MutableList<ParsedParameter>) {
-		logger.debug(LOG_TAG, "parseParameters(parameters = $parameters)")
 		for (parameter in this.parameters) {
 			if (parameter.converter != null) {
 				parameter.addWithConverter(parameters)
@@ -49,7 +48,6 @@ class ParametersParser(
 	}
 
 	private fun ParameterLinkInfo.addWithConverter(parameters: MutableList<ParsedParameter>) {
-		logger.debug(LOG_TAG, "addWithConverter(parameters = $parameters)")
 		when (converter) {
 			is ConverterInfo.GlobalFunc -> {
 				parameters.add(

@@ -9,7 +9,7 @@ class DestinationTypeParser(
 ) : FragmentParser<String> {
 
 	override fun parse(mapperInfo: MapperInfo): String {
-		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
+		logger.debug(LOG_TAG, "Parsing destination type from the \"$mapperInfo\" mapper")
 		return mapperInfo.destination.type
 	}
 

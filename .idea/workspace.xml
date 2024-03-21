@@ -10,8 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="BREAKING CHANGE: K3MConst -&gt; Const">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="REFACTOR: логирование">
+      <change beforePath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MCodeGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MCodeGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +38,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="k3m" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="k3m" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="k3m" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -617,7 +602,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711027417842</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="FIX: сборка k3m-ksp-core">
+      <option name="closed" value="true" />
+      <created>1711029322504</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1711029322504</updated>
+    </task>
+    <task id="LOCAL-00045" summary="REFACTOR: логирование">
+      <option name="closed" value="true" />
+      <created>1711033387590</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1711033387590</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -632,8 +633,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FEAT: генерация" />
-    <MESSAGE value="FIX: формат кода" />
     <MESSAGE value="FIX: импорты" />
     <MESSAGE value="FIX: парсинг с конвертером" />
     <MESSAGE value="FIX: ненужные импорты от параметров" />
@@ -657,6 +656,8 @@
     <MESSAGE value="BREAKING CHANGE: kanti.k3m.serializer.parser -&gt; kanti.k3m.parser" />
     <MESSAGE value="BREAKING CHANGE: kanti.k3m.K3MLogger -&gt; kanti.k3.logger.K3MLogger" />
     <MESSAGE value="BREAKING CHANGE: K3MConst -&gt; Const" />
-    <option name="LAST_COMMIT_MESSAGE" value="BREAKING CHANGE: K3MConst -&gt; Const" />
+    <MESSAGE value="FIX: сборка k3m-ksp-core" />
+    <MESSAGE value="REFACTOR: логирование" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: логирование" />
   </component>
 </project>

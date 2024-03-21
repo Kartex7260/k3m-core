@@ -10,7 +10,7 @@ class MapperSerializer(
 ) : FragmentSerializer<String> {
 
 	override fun serialize(parsedMapper: ParsedMapper): String {
-		logger.debug(LOG_TAG, "serialize(parsedMapper = $parsedMapper)")
+		logger.debug(LOG_TAG, "Serialization mapper function from \"$parsedMapper\" mapper")
 		val stringBuilder = StringBuilder()
 		parsedMapper.defineFunction(stringBuilder)
 		parsedMapper.defineBlock(stringBuilder)
@@ -18,7 +18,6 @@ class MapperSerializer(
 	}
 
 	private fun ParsedMapper.defineFunction(stringBuilder: StringBuilder) {
-		logger.debug(LOG_TAG, "defineFunction(stringBuilder = $stringBuilder)")
 		stringBuilder.append("fun ").append(sourceType).append('.')
 			.append("to").append(destinationType).append('(')
 
@@ -35,7 +34,6 @@ class MapperSerializer(
 	}
 
 	private fun ParsedMapper.defineBlock(stringBuilder: StringBuilder) {
-		logger.debug(LOG_TAG, "defineBlock(stringBuilder = $stringBuilder)")
 		stringBuilder.appendLine(" {")
 			.appendLine("\treturn $destinationType(")
 

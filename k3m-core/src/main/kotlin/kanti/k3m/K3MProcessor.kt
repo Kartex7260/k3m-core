@@ -16,9 +16,10 @@ class K3MProcessor(
 ) {
 
 	fun process(mappers: List<MapperInfo>) {
-		logger.debug(LOG_TAG, "process(mappers = $mappers)")
+		logger.info(LOG_TAG, "Processing the mapper list (count = ${mappers.size})")
 		val mapperCombinator = mapperCombinatorProvider.create()
 		for (mapper in mappers) {
+			logger.debug(LOG_TAG, "Serialization the \"$mapper\" mapper")
 			try {
 				val serializedMapper = serializer.serialize(mapper)
 				mapperCombinator.add(
@@ -32,6 +33,7 @@ class K3MProcessor(
 			}
 		}
 		for (combinedMappers in mapperCombinator.combinedMappers) {
+			logger.debug(LOG_TAG, "Generating the \"$combinedMappers\" combined mapper`s")
 			mapperGenerator.generate(combinedMappers)
 		}
 	}

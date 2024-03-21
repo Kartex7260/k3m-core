@@ -11,21 +11,19 @@ class DependenciesParser(
 ) : FragmentParser<Sequence<ParsedDependency>> {
 
 	override fun parse(mapperInfo: MapperInfo): Sequence<ParsedDependency> {
-		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
+		logger.debug(LOG_TAG, "Parsing dependencies from the \"$mapperInfo\" mapper")
 		val dependencies = mutableListOf<ParsedDependency>()
 		mapperInfo.parseDependencies(dependencies)
 		return dependencies.asSequence()
 	}
 
 	private fun MapperInfo.parseDependencies(dependencies: MutableList<ParsedDependency>) {
-		logger.debug(LOG_TAG, "parseDependencies(dependencies = $dependencies)")
 		for (parameter in parameters) {
 			parameter.converter?.addIfClassFunc(dependencies)
 		}
 	}
 
 	private fun ConverterInfo.addIfClassFunc(dependencies: MutableList<ParsedDependency>) {
-		logger.debug(LOG_TAG, "addIfClassFunc(dependencies = $dependencies)")
 		when (this) {
 			is ConverterInfo.ClassFunc -> {
 				val paramName = paramName

@@ -9,7 +9,7 @@ class ImportsSerializer(
 ) : FragmentSerializer<Iterable<String>> {
 
 	override fun serialize(parsedMapper: ParsedMapper): Iterable<String> {
-		logger.debug(LOG_TAG, "serialize(parsedMapper = $parsedMapper")
+		logger.debug(LOG_TAG, "Serialization imports from the \"$parsedMapper\" mapper")
 		val imports = mutableListOf<String>()
 		for (import in parsedMapper.imports) {
 			imports.add("import ${import.fullName}")

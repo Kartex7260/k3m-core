@@ -9,7 +9,7 @@ class SourceTypeParser(
 ) : FragmentParser<String> {
 
 	override fun parse(mapperInfo: MapperInfo): String {
-		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
+		logger.debug(LOG_TAG, "Parsing source type from the \"$mapperInfo\" mapper")
 		return mapperInfo.source.type
 	}
 

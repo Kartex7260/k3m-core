@@ -17,14 +17,10 @@ class DefaultK3MSerializer(
 	private val mapperSerializer: FragmentSerializer<String> = MapperSerializer(logger)
 ) : K3MSerializer {
 
-	init {
-		logger.debug(LOG_TAG, "create MappingParser")
-	}
-
 	private val parser = mappingParserFactory.create()
 
 	override fun serialize(mapperInfo: MapperInfo): SerializedMapper {
-		logger.debug(LOG_TAG, "serialize(mapperInfo = $mapperInfo)")
+		logger.debug(LOG_TAG, "Serialization the \"$mapperInfo\" mapper")
 		val parsedMapper = parser.parse(mapperInfo)
 
 		return SerializedMapper(

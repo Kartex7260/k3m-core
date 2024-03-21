@@ -12,11 +12,11 @@ class DefaultMappingParser(
 	private val sourceTypeParser: FragmentParser<String> = SourceTypeParser(logger),
 	private val destinationTypeParser: FragmentParser<String> = DestinationTypeParser(logger),
 	private val dependenciesParser: FragmentParser<Sequence<ParsedDependency>> = DependenciesParser(logger),
-	private val parametersParser: FragmentParser<Sequence<ParsedParameter>> = ParametersParser()
+	private val parametersParser: FragmentParser<Sequence<ParsedParameter>> = ParametersParser(logger)
 ) : MappingParser {
 
 	override fun parse(mapperInfo: MapperInfo): ParsedMapper {
-		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
+		logger.debug(LOG_TAG, "Parsing the \"$mapperInfo\" mapper")
 		return ParsedMapper(
 			packageName = packageParser.parse(mapperInfo),
 			imports = importsParser.parse(mapperInfo),

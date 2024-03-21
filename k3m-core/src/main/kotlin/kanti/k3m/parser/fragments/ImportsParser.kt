@@ -12,14 +12,13 @@ class ImportsParser(
 ) : FragmentParser<Sequence<ParsedImport>> {
 
 	override fun parse(mapperInfo: MapperInfo): Sequence<ParsedImport> {
-		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
+		logger.debug(LOG_TAG, "Parsing imports from \"$mapperInfo\" mapper")
 		val mImports = mutableListOf<ParsedImport>()
 		mapperInfo.parseImports(mapperInfo.packageName, mImports)
 		return mImports.asSequence()
 	}
 
 	private fun MapperInfo.parseImports(mainPkg: String, imports: MutableList<ParsedImport>) {
-		logger.debug(LOG_TAG, "parseImports(mainPkg = $mainPkg, imports = $imports)")
 		source.addIfNotKotlin(mainPkg, imports)
 		destination.addIfNotKotlin(mainPkg, imports)
 
@@ -33,7 +32,6 @@ class ImportsParser(
 	}
 
 	private fun TypeInfo.addIfNotKotlin(mainPkg: String, imports: MutableList<ParsedImport>) {
-		logger.debug(LOG_TAG, "addIfNotKotlin(mainPkg = $mainPkg, imports = $imports)")
 		val parsedImport = ParsedImport(packageName = packageName, type = type)
 		if (packageName != "kotlin" && !imports.contains(parsedImport) && packageName != mainPkg) {
 			imports.add(parsedImport)
@@ -41,7 +39,6 @@ class ImportsParser(
 	}
 
 	private fun ConverterInfo?.addIfNotKotlin(mainPkg: String, imports: MutableList<ParsedImport>) {
-		logger.debug(LOG_TAG, "addIfNotKotlin(mainPkg = $mainPkg, imports = $imports)")
 		when (this) {
 			is ConverterInfo.ClassFunc -> {
 				type.addIfNotKotlin(mainPkg, imports)

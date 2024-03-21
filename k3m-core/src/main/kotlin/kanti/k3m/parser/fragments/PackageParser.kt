@@ -9,7 +9,7 @@ class PackageParser(
 ) : FragmentParser<String> {
 
 	override fun parse(mapperInfo: MapperInfo): String {
-		logger.debug(LOG_TAG, "parse(mapperInfo = $mapperInfo)")
+		logger.debug(LOG_TAG, "Parsing package from \"$mapperInfo\" mapper")
 		return mapperInfo.packageName
 	}
 

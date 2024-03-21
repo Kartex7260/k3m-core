@@ -23,8 +23,14 @@ abstract class K3MSymbolProcessor(
 	abstract fun resolveMappers(logger: K3MLogger, resolver: Resolver): List<MapperInfo>
 
 	override fun process(resolver: Resolver): List<KSAnnotated> {
+		logger.info(LOG_TAG, "K3M-KSP mapper processing")
 		val mappers = resolveMappers(logger, resolver)
 		k3mProcessor.process(mappers)
 		return emptyList()
+	}
+
+	companion object {
+
+		private const val LOG_TAG = "${Const.LOG_TAG} K3MSymbolProcessor"
 	}
 }

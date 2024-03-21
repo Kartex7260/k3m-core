@@ -12,8 +12,9 @@ class DefaultMapperCombinator(
 
 	override val combinedMappers: Sequence<CombinedMappers>
 		get() {
-			logger.debug(LOG_TAG, "combinedMappers")
+			logger.debug(LOG_TAG, "Combine all mappers")
 			return mappers.asSequence().map { entry ->
+				logger.debug(LOG_TAG, "Combine ${entry.key} mappers")
 				val mappersSequence = entry.value.asSequence()
 				CombinedMappers(
 					packageName = entry.key.packageName,
@@ -32,12 +33,7 @@ class DefaultMapperCombinator(
 		sourceType: String,
 		serializedMapper: SerializedMapper
 	) {
-		logger.debug(LOG_TAG, "add(\n" +
-				"\tpackageName = $packageName,\n" +
-				"\tsourceFullName = $sourceFullName,\n" +
-				"\tsourceType = $sourceFullName,\n" +
-				"\tserializedMapper = $serializedMapper\n" +
-				")")
+		logger.debug(LOG_TAG, "Add $packageName.$sourceType mapper")
 		val mapperIndex = MapperIndex(
 			packageName = packageName,
 			sourceFullName = sourceFullName,
@@ -58,7 +54,12 @@ class DefaultMapperCombinator(
 		val packageName: String,
 		val sourceFullName: String,
 		val sourceType: String
-	)
+	) {
+
+		override fun toString(): String {
+			return "$packageName.$sourceFullName"
+		}
+	}
 
 	class DefaultMapperCombinatorProvider(
 		private val logger: K3MLogger

@@ -11,7 +11,7 @@ class K3MCodeGenerator(
 ) : MapperGenerator {
 
 	override fun generate(combinedMappers: CombinedMappers) {
-		logger.debug(LOG_TAG, "generate(combinedMappers = $combinedMappers)")
+		logger.debug(LOG_TAG, "Generate \"$combinedMappers\" mappers")
 		val outputStream = codeGenerator.createNewFile(
 			dependencies = Dependencies.ALL_FILES,
 			packageName = combinedMappers.packageName,
