@@ -2,7 +2,7 @@ package kanti.k3m.serializer.parser.fragments
 
 import kanti.k3m.K3MConst
 import kanti.k3m.K3MLogger
-import kanti.k3m.data.MapperInfo
+import kanti.k3m.symbol.MapperInfo
 
 class PackageParser(
 	private val logger: K3MLogger = K3MLogger.NonLogger

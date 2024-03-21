@@ -4,7 +4,7 @@ import kanti.k3m.serializer.SerializedMapper
 
 interface MapperCombinator {
 
-	val combinedMappers: Iterable<CombinedMappers>
+	val combinedMappers: Sequence<CombinedMappers>
 
 	fun add(
 		packageName: String,

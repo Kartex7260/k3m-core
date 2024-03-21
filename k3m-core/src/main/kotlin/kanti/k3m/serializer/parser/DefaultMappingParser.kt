@@ -2,7 +2,7 @@ package kanti.k3m.serializer.parser
 
 import kanti.k3m.K3MConst
 import kanti.k3m.K3MLogger
-import kanti.k3m.data.MapperInfo
+import kanti.k3m.symbol.MapperInfo
 import kanti.k3m.serializer.parser.fragments.*
 
 class DefaultMappingParser(

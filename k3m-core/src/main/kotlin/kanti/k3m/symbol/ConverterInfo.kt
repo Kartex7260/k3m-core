@@ -1,4 +1,4 @@
-package kanti.k3m.data
+package kanti.k3m.symbol
 
 sealed class ConverterInfo {
 

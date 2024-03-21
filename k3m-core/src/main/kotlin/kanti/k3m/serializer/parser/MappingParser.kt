@@ -1,7 +1,7 @@
 package kanti.k3m.serializer.parser
 
-import kanti.k3m.data.*
 import kanti.k3m.serializer.parser.fragments.*
+import kanti.k3m.symbol.MapperInfo
 
 interface MappingParser {
 

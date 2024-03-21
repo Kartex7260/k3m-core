@@ -1,6 +1,6 @@
 package kanti.k3m.serializer.parser.fragments
 
-import kanti.k3m.data.MapperInfo
+import kanti.k3m.symbol.MapperInfo
 
 interface FragmentParser<Result> {
 

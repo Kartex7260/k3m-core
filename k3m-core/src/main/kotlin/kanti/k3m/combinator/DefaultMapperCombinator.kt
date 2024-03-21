@@ -10,10 +10,10 @@ class DefaultMapperCombinator(
 
 	private val mappers = HashMap<MapperIndex, MutableList<SerializedMapper>>()
 
-	override val combinedMappers: Iterable<CombinedMappers>
+	override val combinedMappers: Sequence<CombinedMappers>
 		get() {
 			logger.debug(LOG_TAG, "combinedMappers")
-			return mappers.map { entry ->
+			return mappers.asSequence().map { entry ->
 				val mappersSequence = entry.value.asSequence()
 				CombinedMappers(
 					packageName = entry.key.packageName,

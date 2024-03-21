@@ -2,8 +2,8 @@ package kanti.k3m.serializer.parser.fragments
 
 import kanti.k3m.K3MConst
 import kanti.k3m.K3MLogger
-import kanti.k3m.data.ConverterInfo
-import kanti.k3m.data.MapperInfo
+import kanti.k3m.symbol.ConverterInfo
+import kanti.k3m.symbol.MapperInfo
 import kanti.k3m.serializer.parser.DependencyInfo
 
 class DependenciesParser(
