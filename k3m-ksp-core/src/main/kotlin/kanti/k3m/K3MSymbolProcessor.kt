@@ -5,7 +5,8 @@ import com.google.devtools.ksp.processing.KSPLogger
 import com.google.devtools.ksp.processing.Resolver
 import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.symbol.KSAnnotated
-import kanti.k3m.data.MapperInfo
+import kanti.k3m.logger.K3MLogger
+import kanti.k3m.symbol.MapperInfo
 
 abstract class K3MSymbolProcessor(
 	kspLogger: KSPLogger,

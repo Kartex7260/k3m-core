@@ -3,6 +3,7 @@ package kanti.k3m
 import com.google.devtools.ksp.processing.CodeGenerator
 import com.google.devtools.ksp.processing.Dependencies
 import kanti.k3m.combinator.CombinedMappers
+import kanti.k3m.logger.K3MLogger
 
 class K3MCodeGenerator(
 	private val codeGenerator: CodeGenerator,
@@ -31,6 +32,6 @@ class K3MCodeGenerator(
 
 	companion object {
 
-		private const val LOG_TAG = "${K3MKSPConst.LOG_TAG} K3MCodeGenerator"
+		private const val LOG_TAG = "${Const.LOG_TAG} K3MCodeGenerator"
 	}
 }

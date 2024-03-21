@@ -2,40 +2,41 @@ package kanti.k3m
 
 import com.google.devtools.ksp.processing.KSPLogger
 import com.google.devtools.ksp.symbol.KSNode
+import kanti.k3m.logger.BaseK3MLogger
 
 class K3MKSPLogger(
 	private val kspLogger: KSPLogger
-) : K3MLogger {
+) : BaseK3MLogger() {
 
-	override fun debug(tag: String, message: String, symbol: Any?) {
+	override fun debug(line: String, symbol: Any?) {
 		if (symbol is KSNode)
-			kspLogger.logging("$tag: $message", symbol)
+			kspLogger.logging(line, symbol)
 		else
-			kspLogger.logging("$tag: $message", null)
+			kspLogger.logging(line, null)
 	}
 
-	override fun error(tag: String, message: String, symbol: Any?) {
+	override fun error(line: String, symbol: Any?) {
 		if (symbol is KSNode)
-			kspLogger.error("$tag: $message", symbol)
+			kspLogger.error(line, symbol)
 		else
-			kspLogger.error("$tag: $message", null)
+			kspLogger.error(line, null)
+	}
+
+	override fun info(line: String, symbol: Any?) {
+		if (symbol is KSNode)
+			kspLogger.info(line, symbol)
+		else
+			kspLogger.info(line, null)
+	}
+
+	override fun warn(line: String, symbol: Any?) {
+		if (symbol is KSNode)
+			kspLogger.warn(line, symbol)
+		else
+			kspLogger.warn(line, null)
 	}
 
 	override fun exception(e: Throwable) {
 		kspLogger.exception(e)
-	}
-
-	override fun info(tag: String, message: String, symbol: Any?) {
-		if (symbol is KSNode)
-			kspLogger.info("$tag: $message", symbol)
-		else
-			kspLogger.info("$tag: $message", null)
-	}
-
-	override fun warn(tag: String, message: String, symbol: Any?) {
-		if (symbol is KSNode)
-			kspLogger.warn("$tag: $message", symbol)
-		else
-			kspLogger.warn("$tag: $message", null)
 	}
 }

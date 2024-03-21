@@ -1,6 +1,6 @@
 package kanti.k3m
 
-object K3MKSPConst {
+internal object Const {
 
 	const val LOG_TAG = "[K3M-KSP-CORE]"
 }
