@@ -1,7 +1,7 @@
 package kanti.k3m.combinator
 
 import kanti.k3m.K3MConst
-import kanti.k3m.K3MLogger
+import kanti.k3m.logger.K3MLogger
 import kanti.k3m.serializer.SerializedMapper
 
 class DefaultMapperCombinator(

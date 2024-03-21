@@ -2,6 +2,7 @@ package kanti.k3m
 
 import kanti.k3m.combinator.DefaultMapperCombinator
 import kanti.k3m.combinator.MapperCombinator
+import kanti.k3m.logger.K3MLogger
 import kanti.k3m.symbol.MapperInfo
 import kanti.k3m.serializer.DefaultK3MSerializer
 import kanti.k3m.serializer.K3MSerializer

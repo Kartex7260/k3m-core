@@ -1,7 +1,7 @@
 package kanti.k3m.serializer.fragments
 
 import kanti.k3m.K3MConst
-import kanti.k3m.K3MLogger
+import kanti.k3m.logger.K3MLogger
 import kanti.k3m.parser.ParsedMapper
 
 class ImportsSerializer(

@@ -1,4 +1,4 @@
-package kanti.k3m
+package kanti.k3m.logger
 
 interface K3MLogger {
 
