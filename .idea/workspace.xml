@@ -3,19 +3,17 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="k3m-core" />
-      <artifact name="k3m-ksp-core" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="REFACTOR: парсинг зависимостей">
+    <list default="true" id="66ce4cae-f855-4daa-991f-d5344ef4d47d" name="Changes" comment="FIX: логирование">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/K3MProcessor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/DefaultMapperCombinator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/MapperCombinator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/combinator/MapperCombinator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/logger/BaseK3MLogger.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-core/src/main/kotlin/kanti/k3m/logger/BaseK3MLogger.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-ksp-core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-ksp-core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/k3m-ksp-core/src/main/kotlin/kanti/k3m/K3MSymbolProcessor.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +47,24 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="k3m-core" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="k3m-core" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="k3m-ksp-core" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="k3m" type="f1a62948:ProjectNode" />
+                <item name="k3m-ksp-core" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -119,6 +128,9 @@
     &quot;Gradle.k3m:k3m-core [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.k3m:k3m-core [clean].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.k3m:k3m-core [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.k3m:k3m-ksp-core [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.k3m:k3m-ksp-core [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.k3m:k3m-ksp-core [dependencies].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.k3m:k3m-ksp-core [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -147,11 +159,11 @@
       <recent name="kanti.k3m.serializer" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.k3m [build]">
-    <configuration name="k3m [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.k3m:k3m-core [build]">
+    <configuration name="k3m:k3m-core [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/k3m-core" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -170,10 +182,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="k3m [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="k3m:k3m-core [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/k3m-core" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -182,28 +194,6 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="k3m [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="publishToMavenLocal" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -236,7 +226,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="k3m:k3m-ksp-core [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="k3m:k3m-ksp-core [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/k3m-ksp-core" />
@@ -247,7 +237,29 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="publishToMavenLocal" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="k3m:k3m-ksp-core [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/k3m-ksp-core" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -260,11 +272,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.k3m [build]" />
-        <item itemvalue="Gradle.k3m [clean]" />
-        <item itemvalue="Gradle.k3m [publishToMavenLocal]" />
-        <item itemvalue="Gradle.k3m:k3m-ksp-core [publishToMavenLocal]" />
+        <item itemvalue="Gradle.k3m:k3m-core [build]" />
+        <item itemvalue="Gradle.k3m:k3m-core [clean]" />
         <item itemvalue="Gradle.k3m:k3m-core [publishToMavenLocal]" />
+        <item itemvalue="Gradle.k3m:k3m-ksp-core [build]" />
+        <item itemvalue="Gradle.k3m:k3m-ksp-core [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -276,22 +288,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710160661735</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1710162506784</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1710162506784</updated>
-    </task>
-    <task id="LOCAL-00002" summary="FEAT: Data классы">
-      <option name="closed" value="true" />
-      <created>1710255193018</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1710255193018</updated>
     </task>
     <task id="LOCAL-00003" summary="FEAT: Data классы">
       <option name="closed" value="true" />
@@ -669,7 +665,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711042658617</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="FIX: логирование">
+      <option name="closed" value="true" />
+      <created>1711042946288</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1711042946288</updated>
+    </task>
+    <task id="LOCAL-00051" summary="FIX: логирование">
+      <option name="closed" value="true" />
+      <created>1711043030855</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1711043030855</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -684,7 +696,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TEST: тест с конвертером с зависимостью от класса" />
     <MESSAGE value="BREAKING CHANGE: раздробление парсера на фрагменты" />
     <MESSAGE value="BREAKING CHANGE: раздробление сериализатора.&#10;&#10;FEAT: сериализатор возвращает дата класс с пакетом, импортами и мап функцией, вместо целой строки" />
     <MESSAGE value="FEAT: комбинатор, что бы помещать в несколько map функций в один файл" />
@@ -709,6 +720,7 @@
     <MESSAGE value="REFACTOR: преобразование imports через Sequence" />
     <MESSAGE value="REFACTOR:  парсинг импортов" />
     <MESSAGE value="REFACTOR: парсинг зависимостей" />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: парсинг зависимостей" />
+    <MESSAGE value="FIX: логирование" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: логирование" />
   </component>
 </project>

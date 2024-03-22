@@ -5,7 +5,6 @@ plugins {
 
 val libGroupId: String by project
 val libArtifactId: String by project
-val libKspArtifactId: String by project
 val libVersion: String by project
 
 group = libGroupId

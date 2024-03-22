@@ -15,8 +15,8 @@ class K3MProcessor(
 		DefaultMapperCombinator.DefaultMapperCombinatorProvider(logger)
 ) {
 
-	fun process(mappers: List<MapperInfo>) {
-		logger.debug(LOG_TAG, "Processing the mapper list (count = ${mappers.size})")
+	fun process(mappers: Sequence<MapperInfo>) {
+		logger.debug(LOG_TAG, "Processing the mapper list")
 		val mapperCombinator = mapperCombinatorProvider.create()
 		for (mapper in mappers) {
 			logger.debug(LOG_TAG, "Serialization the \"$mapper\" mapper")
