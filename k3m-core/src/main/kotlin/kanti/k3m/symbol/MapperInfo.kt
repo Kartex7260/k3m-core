@@ -4,7 +4,6 @@ data class MapperInfo(
 	val packageName: String,
 	val source: TypeInfo,
 	val destination: TypeInfo,
-	val isSourceCastToDestination: Boolean,
 	val parameters: Sequence<ParameterLinkInfo>
 ) {
 

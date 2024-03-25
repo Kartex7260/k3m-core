@@ -14,18 +14,16 @@ class ParametersParser(
 
 	override fun parse(mapperInfo: MapperInfo): Sequence<ParsedParameter> {
 		logger.debug(LOG_TAG, "Parsing parameters from the \"$mapperInfo\" mapper")
-		return mapperInfo.parameters.parseParameters(mapperInfo.isSourceCastToDestination)
+		return mapperInfo.parameters.parseParameters()
 	}
 
-	private fun Sequence<ParameterLinkInfo>.parseParameters(
-		isSourceCastToDestination: Boolean
-	): Sequence<ParsedParameter> {
+	private fun Sequence<ParameterLinkInfo>.parseParameters(): Sequence<ParsedParameter> {
 		return map { parameter ->
 			if (parameter.converter != null) {
 				return@map parameter.toParsedParameter()
 			}
 
-			if (parameter.sourceType == parameter.destinationType || isSourceCastToDestination) {
+			if (parameter.sourceType == parameter.destinationType || parameter.isSourceCastToDestination) {
 				return@map ParsedParameter(
 					destination = parameter.destinationName,
 					source = parameter.sourceName,

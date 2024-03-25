@@ -5,5 +5,6 @@ data class ParameterLinkInfo(
 	val destinationName: String,
 	val sourceType: TypeInfo,
 	val destinationType: TypeInfo,
+	val isSourceCastToDestination: Boolean,
 	val converter: ConverterInfo?
 )
